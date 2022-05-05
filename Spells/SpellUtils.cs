@@ -26,6 +26,7 @@ namespace Spells
         public const string miles = "miles";
         public const string feet = "feet";
         public const string footLine = "-foot line";
+        public const string footCone = "-foot cone";
         public const string footCube = "-foot cube";
         public const string footRadius = "-foot radius";
         public const string mileRadius = "-mile radius";
@@ -45,6 +46,7 @@ namespace Spells
         public const string concentration = "Concentration, up to ";
         public const string special = "Special";
         public const string untilDispelled = "Until dispelled";
+        public const string round = "1 round";
     }
 
     public static class StringTime
@@ -97,6 +99,9 @@ namespace Spells
         public const string intelligence = "Intelligence";
         public const string wisdom = "Wisdom";
         public const string charisma = "Charisma";
+        public const string melee = "Melee Spell Attack";
+        public const string ranged = "Ranged Spell Attack";
+
     }
 
     public static class DamageType 

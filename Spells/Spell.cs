@@ -22,6 +22,7 @@ namespace Spells
         public bool Ritual { get; set; } = false;
         public string Description { get; set; } = "";
         public string[] Classes { get; set; } = new string[0];
+        public bool SingleTarget { get; set; } = false;
         public string[] SavingThrows { get; set; } = new string [0];
         public string[] DamageTypes { get; set; } = new string[0];
         public string[] Conditions { get; set; } = new string[0];
@@ -41,6 +42,7 @@ namespace Spells
             bool ritual,
             string description,
             string[] classes,
+            bool singleTarget,
             string[] savingThrows,
             string[] damageTypes,
             string[] conditions)
@@ -60,6 +62,7 @@ namespace Spells
             this.Ritual = ritual;
             this.Description = description;
             this.Classes = classes;
+            this.SingleTarget = singleTarget;
             this.SavingThrows = savingThrows;
             this.DamageTypes = damageTypes;
             this.Conditions = conditions;
