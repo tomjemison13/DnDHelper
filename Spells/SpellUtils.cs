@@ -116,4 +116,23 @@ namespace Spells
         public const string thunder = "Thunder";
     }
 
+    public static class Conditions 
+    {
+        public const string blinded = "Blinded";
+        public const string charmed = "Charmed";
+        public const string deafened = "Deafened";
+        public const string frightened = "Frightened";
+        public const string grappled = "Grappled";
+        public const string incapacitated = "Incapacitated";
+        public const string invisible = "Invisible";
+        public const string paralyzed = "Paralyzed";
+        public const string petrified = "Petrified";
+        public const string poisoned = "Poisoned";
+        public const string prone = "Prone";
+        public const string restrained = "Restrained";
+        public const string stunned = "Stunned";
+        public const string unconscious = "Unconscious";
+        public const string exhaustion = "Exhaustion";
+    }
+
 }
