@@ -4,13 +4,16 @@ using System.Text;
 
 namespace Spells
 {
-    public class PHB
+    public static class PHB
     {
-        public string name = "Player's Handbook";
-        public Dictionary<string, Spell> Spells { get; private set; }
+        public const string name = "Player's Handbook";
 
-        public void Init()
+        public static Dictionary<string, Spell> Spells { get; private set; }
+
+        public static void Init()
         {
+            Spells = new Dictionary<string, Spell>();
+
             #region A
             Spell acidSplash = new Spell
             {
