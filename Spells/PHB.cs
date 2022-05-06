@@ -6,7 +6,7 @@ namespace Spells
 {
     public static class PHB
     {
-        public const string name = "Player's Handbook";
+        public const string sourceTitle = "Player's Handbook";
 
         public static Dictionary<string, Spell> Spells { get; private set; }
 
@@ -17,7 +17,7 @@ namespace Spells
             #region A
             Spell acidSplash = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Acid Slash",
                 SpellLv = SpellLv.cantrip,
                 School = SchoolOfMagic.conjuration,
@@ -36,7 +36,7 @@ namespace Spells
 
             Spell aid = new Spell 
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Aid",
                 SpellLv = SpellLv.second,
                 School = SchoolOfMagic.abjuration,
@@ -53,7 +53,7 @@ namespace Spells
 
             Spell alarm = new Spell 
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Alarm",
                 SpellLv = SpellLv.first,
                 School = SchoolOfMagic.abjuration,
@@ -71,7 +71,7 @@ namespace Spells
 
             Spell alterSelf = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Alter Self",
                 SpellLv = SpellLv.second,
                 School = SchoolOfMagic.transmutation,
@@ -91,7 +91,7 @@ namespace Spells
 
             Spell animalFriendship = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Animal Friendship",
                 SpellLv = SpellLv.first,
                 School = SchoolOfMagic.enchantment,
@@ -111,7 +111,7 @@ namespace Spells
 
             Spell animalMessenger = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Animal Messenger",
                 SpellLv = SpellLv.second,
                 School = SchoolOfMagic.enchantment,
@@ -130,7 +130,7 @@ namespace Spells
 
             Spell animalShapes = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Animal Shapes",
                 SpellLv = SpellLv.eighth,
                 School = SchoolOfMagic.transmutation,
@@ -146,7 +146,7 @@ namespace Spells
 
             Spell animateDead = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Animate Dead",
                 SpellLv = SpellLv.third,
                 School = SchoolOfMagic.necromancy,
@@ -163,7 +163,7 @@ namespace Spells
 
             Spell animateObjects = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Animate Objects",
                 SpellLv = SpellLv.fifth,
                 School = SchoolOfMagic.transmutation,
@@ -180,7 +180,7 @@ namespace Spells
 
             Spell anitlifeShell = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Antilife Shell",
                 SpellLv = SpellLv.fifth,
                 School = SchoolOfMagic.abjuration,
@@ -197,7 +197,7 @@ namespace Spells
 
             Spell antimagicField = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Antimagic Field",
                 SpellLv = SpellLv.eighth,
                 School = SchoolOfMagic.abjuration,
@@ -215,7 +215,7 @@ namespace Spells
 
             Spell antipathySympathy = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Antipathy/Sympathy",
                 SpellLv = SpellLv.eighth,
                 School = SchoolOfMagic.enchantment,
@@ -234,7 +234,7 @@ namespace Spells
 
             Spell arcaneEye = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Arcane Eye",
                 SpellLv = SpellLv.fourth,
                 School = SchoolOfMagic.divination,
@@ -252,7 +252,7 @@ namespace Spells
 
             Spell arcaneGate = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Arcane Gate",
                 SpellLv = SpellLv.sixth,
                 School = SchoolOfMagic.conjuration,
@@ -269,7 +269,7 @@ namespace Spells
 
             Spell arcaneLock = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Arcane Lock",
                 SpellLv = SpellLv.second,
                 School = SchoolOfMagic.abjuration,
@@ -288,7 +288,7 @@ namespace Spells
 
             Spell armorOfAgathys = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Armor of Agathys",
                 SpellLv = SpellLv.first,
                 School = SchoolOfMagic.abjuration,
@@ -306,7 +306,7 @@ namespace Spells
 
             Spell armsOfHadar = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Arms of Hadar",
                 SpellLv = SpellLv.first,
                 School = SchoolOfMagic.conjuration,
@@ -324,7 +324,7 @@ namespace Spells
 
             Spell astralProjection = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Astral Projection",
                 SpellLv = SpellLv.nineth,
                 School = SchoolOfMagic.necromancy,
@@ -342,7 +342,7 @@ namespace Spells
 
             Spell augury = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Augury",
                 SpellLv = SpellLv.second,
                 School = SchoolOfMagic.divination,
@@ -361,7 +361,7 @@ namespace Spells
 
             Spell auraOfLive = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Aura of Life",
                 SpellLv = SpellLv.fourth,
                 School = SchoolOfMagic.abjuration,
@@ -377,7 +377,7 @@ namespace Spells
 
             Spell auraOfPurity = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Aura of Purity",
                 SpellLv = SpellLv.fourth,
                 School = SchoolOfMagic.abjuration,
@@ -393,7 +393,7 @@ namespace Spells
 
             Spell auraOfVitality = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Aura of Vitality",
                 SpellLv = SpellLv.third,
                 School = SchoolOfMagic.evocation,
@@ -409,7 +409,7 @@ namespace Spells
 
             Spell awaken = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Awaken",
                 SpellLv = SpellLv.fifth,
                 School = SchoolOfMagic.transmutation,
@@ -432,7 +432,7 @@ namespace Spells
 
             Spell bane = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Bane",
                 SpellLv = SpellLv.first,
                 School = SchoolOfMagic.enchantment,
@@ -451,7 +451,7 @@ namespace Spells
 
             Spell banishingSmite = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Banishing Smite",
                 SpellLv = SpellLv.fifth,
                 School = SchoolOfMagic.abjuration,
@@ -469,7 +469,7 @@ namespace Spells
 
             Spell banishment = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Banishment",
                 SpellLv = SpellLv.fourth,
                 School = SchoolOfMagic.abjuration,
@@ -490,7 +490,7 @@ namespace Spells
 
             Spell barkskin = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Barkskin",
                 SpellLv = SpellLv.second,
                 School = SchoolOfMagic.transmutation,
@@ -509,7 +509,7 @@ namespace Spells
 
             Spell beaconOfHope = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Beacon of Hope",
                 SpellLv = SpellLv.third,
                 School = SchoolOfMagic.abjuration,
@@ -526,7 +526,7 @@ namespace Spells
 
             Spell beastSense = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Beast Sense",
                 SpellLv = SpellLv.second,
                 School = SchoolOfMagic.divination,
@@ -544,7 +544,7 @@ namespace Spells
 
             Spell bestowCurse = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Bestow Curse",
                 SpellLv = SpellLv.third,
                 School = SchoolOfMagic.necromancy,
@@ -564,7 +564,7 @@ namespace Spells
 
             Spell bigbysHand = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Bigby's Hand",
                 SpellLv = SpellLv.fifth,
                 School = SchoolOfMagic.evocation,
@@ -585,7 +585,7 @@ namespace Spells
 
             Spell bladeBarrier = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Blade Barrier",
                 SpellLv = SpellLv.sixth,
                 School = SchoolOfMagic.evocation,
@@ -604,7 +604,7 @@ namespace Spells
 
             Spell bladeWard = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Blade Ward",
                 SpellLv = SpellLv.cantrip,
                 School = SchoolOfMagic.abjuration,
@@ -620,7 +620,7 @@ namespace Spells
 
             Spell bless = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Bless",
                 SpellLv = SpellLv.first,
                 School = SchoolOfMagic.enchantment,
@@ -638,7 +638,7 @@ namespace Spells
 
             Spell blight = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Blight",
                 SpellLv = SpellLv.fourth,
                 School = SchoolOfMagic.necromancy,
@@ -657,7 +657,7 @@ namespace Spells
 
             Spell blindingSmite = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Blinding Smite",
                 SpellLv = SpellLv.third,
                 School = SchoolOfMagic.evocation,
@@ -676,7 +676,7 @@ namespace Spells
 
             Spell blindnessDeafness = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Blindness/Deafness",
                 SpellLv = SpellLv.second,
                 School = SchoolOfMagic.necromancy,
@@ -695,7 +695,7 @@ namespace Spells
 
             Spell blink = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Blink",
                 SpellLv = SpellLv.third,
                 School = SchoolOfMagic.transmutation,
@@ -711,7 +711,7 @@ namespace Spells
 
             Spell blur = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Blur",
                 SpellLv = SpellLv.second,
                 School = SchoolOfMagic.illusion,
@@ -727,7 +727,7 @@ namespace Spells
 
             Spell brandingSmite = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Branding Smite",
                 SpellLv = SpellLv.second,
                 School = SchoolOfMagic.evocation,
@@ -744,7 +744,7 @@ namespace Spells
 
             Spell burningHands = new Spell
             {
-                Source = this.name,
+                Source = sourceTitle,
                 Name = "Burning Hands",
                 SpellLv = SpellLv.first,
                 School = SchoolOfMagic.evocation,
@@ -759,6 +759,138 @@ namespace Spells
                 DamageTypes = new string[] { DamageType.fire },
             };
             Spells.Add(burningHands.Name, burningHands);
+
+            #endregion
+
+            #region C
+
+            Spell callLightning = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Call Lightning",
+                SpellLv = SpellLv.third,
+                School = SchoolOfMagic.conjuration,
+                CastingTime = DndTime.action,
+                Range = "120 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.concentration + "10 " + StringTime.minutes,
+                Concentration = true,
+                Description = "A storm cloud appears in the shape of a cylinder that is 10 feet tall with a 60-foot radius, centered on a point you can see 100 feet directly above you. The spell fails if you can’t see a point in the air where the storm cloud could appear (for example, if you are in a room that can’t accommodate the cloud). When you cast the spell, choose a point you can see within range. A bolt of lightning flashes down from the cloud to that point. Each creature within 5 feet of that point must make a Dexterity saving throw. A creature takes 3d10 lightning damage on a failed save, or half as much damage on a successful one. On each of your turns until the spell ends, you can use your action to call down lightning in this way again, targeting the same point or a different one. If you are outdoors in stormy conditions when you cast this spell, the spell gives you control over the existing storm instead of creating a new one. Under such conditions, the spell’s damage increases by 1d10. At Higher Levels. When you cast this spell using a spell slot of 4th or higher level, the damage increases by 1d10 for each slot level above 3rd",
+                Classes = new string[] { DnDClass.druid },
+                SavingThrows = new string[] { SavingThrows.dexterity },
+                DamageTypes = new string[] { DamageType.lightning },
+            };
+            Spells.Add(callLightning.Name, callLightning);
+
+            Spell calmEmotions = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Calm Emotions",
+                SpellLv = SpellLv.second,
+                School = SchoolOfMagic.enchantment,
+                CastingTime = DndTime.action,
+                Range = "60 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "You attempt to suppress strong emotions in a group of people. Each humanoid in a 20-foot-radius sphere centered on a point you choose within range must make a Charisma saving throw; a creature can choose to fail this saving throw if it wishes. If a creature fails its saving throw, choose one of the following two effects. You can suppress any effect causing a target to be charmed or frightened. When this spell ends, any suppressed effect resumes, provided that its duration has not expired in the meantime. Alternatively, you can make a target indifferent about creatures of your choice that it is hostile toward. This indifference ends if the target is attacked or harmed by a spell or if it witnesses any of its friends being harmed. When the spell ends, the creature becomes hostile again, unless the DM rules otherwise. ",
+                Classes = new string[] { DnDClass.bard, DnDClass.cleric },
+                SavingThrows = new string[] { SavingThrows.charisma },
+                Conditions = new string[] { Conditions.charmed, Conditions.frightened }
+            };
+            Spells.Add(calmEmotions.Name, calmEmotions);
+
+            Spell chainLightning = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Chain Lightning",
+                SpellLv = SpellLv.sixth,
+                School = SchoolOfMagic.evocation,
+                CastingTime = DndTime.action,
+                Range = "150 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a bit of fur; a piece of amber, glass, or a crystal rod; and three silver pins",
+                Duration = DndTime.instantaneous,
+                Description = "You create a bolt of lightning that arcs toward a target of your choice that you can see within range. Three bolts then leap from that target to as many as three other targets, each of which must be within 30 feet of the first target. A target can be a creature or an object and can be targeted by only one of the bolts. A target must make a Dexterity saving throw. The target takes 10d8 lightning damage on a failed save, or half as much damage on a successful one. At Higher Levels. When you cast this spell using a spell slot of 7th level or higher, one additional bolt leaps from the first target to another target for each slot level above 6th",
+                Classes = new string[] { DnDClass.sorcerer, DnDClass.wizard },
+                SavingThrows = new string[] { SavingThrows.dexterity },
+                DamageTypes = new string[] { DamageType.lightning },
+            };
+            Spells.Add(chainLightning.Name, chainLightning);
+
+            Spell charmPerson = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Charm Person",
+                SpellLv = SpellLv.first,
+                School = SchoolOfMagic.enchantment,
+                CastingTime = DndTime.action,
+                Range = "30 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = StringTime.hour,
+                Description = "You attempt to charm a humanoid you can see within range. It must make a Wisdom saving throw, and does so with advantage if you or your companions are fighting it. If it fails the saving throw, it is charmed by you until the spell ends or until you or your companions do anything harmful to it. The charmed creature regards you as a friendly acquaintance. When the spell ends, the creature knows it was charmed by you. At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
+                Classes = new string[] { DnDClass.bard, DnDClass.druid, DnDClass.sorcerer, DnDClass.warlock, DnDClass.wizard},
+                SingleTarget = true,
+                SavingThrows = new string[] { SavingThrows.wisdom },
+                Conditions = new string[] { Conditions.charmed }
+            };
+            Spells.Add(charmPerson.Name, charmPerson);
+
+            Spell chillTouch = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Chill Touch",
+                SpellLv = SpellLv.cantrip,
+                School = SchoolOfMagic.necromancy,
+                CastingTime = DndTime.action,
+                Range = "120 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.round,
+                Description = "You create a ghostly, skeletal hand in the space of a creature within range. Make a ranged spell attack against the creature to assail it with the chill of the grave. On a hit, the target takes 1d8 necrotic damage, and it can’t regain hit points until the start of your next turn. Until then, the hand clings to the target. If you hit an undead target, it also has disadvantage on attack rolls against you until the end of your next turn. This spell’s damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
+                Classes = new string[] { DnDClass.sorcerer, DnDClass.warlock, DnDClass.wizard },
+                SingleTarget = true,
+                SavingThrows = new string[] { SavingThrows.ranged },
+                DamageTypes = new string[] { DamageType.necrotic },
+            };
+            Spells.Add(chillTouch.Name, chillTouch);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             #endregion
         }
