@@ -11,6 +11,7 @@ namespace Spells
         public string Name { get; set; } = "";
         public string SpellLv { get; set; } = "";
         public string School { get; set; } = "";
+        public bool Ritual { get; set; } = false;
         public string CastingTime { get; set; } = "";
         public string Range { get; set; } = "";
         public bool Verbal { get; set; } = false;
@@ -19,7 +20,6 @@ namespace Spells
         public int SpellCost { get; set; } = 0;
         public string Duration { get; set; } = "";
         public bool Concentration { get; set; } = false;
-        public bool Ritual { get; set; } = false;
         public string Description { get; set; } = "";
         public string[] Classes { get; set; } = new string[0];
         public bool SingleTarget { get; set; } = false;
@@ -31,6 +31,7 @@ namespace Spells
             string name,
             string spellLv,
             string school,
+            bool ritual,
             string castingTime,
             string range,
             bool verbal,
@@ -39,7 +40,6 @@ namespace Spells
             int spellCost,
             string duration,
             bool concentration,
-            bool ritual,
             string description,
             string[] classes,
             bool singleTarget,
@@ -51,6 +51,7 @@ namespace Spells
             this.Name = name;
             this.SpellLv = spellLv;
             this.School = school;
+            this.Ritual = ritual;
             this.CastingTime = castingTime;
             this.Range = range;
             this.Verbal = verbal;
@@ -59,7 +60,6 @@ namespace Spells
             this.SpellCost = spellCost;
             this.Duration = duration;
             this.Concentration = concentration;
-            this.Ritual = ritual;
             this.Description = description;
             this.Classes = classes;
             this.SingleTarget = singleTarget;

@@ -63,9 +63,8 @@ namespace Spells
                 Somatic = true,
                 Materials = "a tiny bell and a piece of fine silver wire",
                 Duration = "8 " + StringTime.hours,
-                Ritual = true,
                 Description = "You set an alarm against unwanted intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot cube. Until the spell ends, an alarm alerts you whenever a Tiny or larger creature touches or enters the w arded area. W hen you cast the spell, you can designate creatures that w on’t set off the alarm. You also choose whether the alarm is mental or audible. A mental alarm alerts you with a ping in your mind if you are within 1 mile of the warded area. This ping awakens you if you are sleeping. An audible alarm produces the sound of a hand bell for 10 seconds within 60 feet.",
-                Classes = new string[] { DnDClass.wizard }
+                Classes = new string[] { DnDClass.ranger, DnDClass.wizard }
             };
             Spells.Add(alarm.Name, alarm);
 
@@ -75,6 +74,7 @@ namespace Spells
                 Name = "Alter Self",
                 SpellLv = SpellLv.second,
                 School = SchoolOfMagic.transmutation,
+                Ritual = true,
                 CastingTime = DndTime.action,
                 Range = Range.self,
                 Verbal = true,
@@ -83,7 +83,6 @@ namespace Spells
                 SpellCost = 0,
                 Duration = DndTime.concentration + StringTime.hour,
                 Concentration = true,
-                Ritual = false,
                 Description = "You assume a different form. When you cast the spell, choose one of the following options, the effects of which last for the duration of the spell. While the spell lasts, you can end one option as an action to gain the benefits of a different one.\n Aquatic Adaptation. You adapt your body to an aquatic environment, sprouting gills and growing w ebbing between your fingers. You can breathe underwater and gain a swimming speed equal to your walking speed. \n Change Appearance. You transform your appearance. You decide what you look like, including your height, weight, facial features, sound of your voice, hair length, coloration, and distinguishing characteristics, if any. You can make yourself appear as a m em ber of another race, though none of your statistics change. You also can’t appear as a creature of a different size than you, and your basic shape stays the same; if you're bipedal, you can’t use this spell to becom e quadrupedal, for instance. At any time for the duration of the spell, you can use your action to change your appearance in this way again. \n Natural Weapons. You grow claws, fangs, spines, horns, or a different natural w eapon of your choice. Your unarm ed strikes deal 1d6 bludgeoning, piercing, or slashing damage, as appropriate to the natural weapon you chose, and you are proficient with your unarmed strikes. Finally, the natural weapon is magic and you have a +1 bonus to the attack and damage rolls you make using it.",
                 Classes = new string[] { DnDClass.sorcerer, DnDClass.wizard }
             };
@@ -115,13 +114,13 @@ namespace Spells
                 Name = "Animal Messenger",
                 SpellLv = SpellLv.second,
                 School = SchoolOfMagic.enchantment,
+                Ritual = true,
                 CastingTime = DndTime.action,
                 Range = "30 " + Range.feet,
                 Verbal = true,
                 Somatic = true,
                 Materials = "a morsel of food",
                 Duration = "24 " + StringTime.hours,
-                Ritual = true,
                 Description = "By means of this spell, you use an animal to deliver a message. Choose a Tiny beast you can see within range, such as a squirrel, a blue jay, or a bat. You specify a location, which you must have visited, and a recipient who matches a general description, such as “a man or woman dressed in the uniform of the town guard” or “a red-haired dwarf wearing a pointed hat.” You also speak a message of up to twenty-five words. The target beast travels for the duration of the spell toward the specified location, covering about 50 miles per 24 hours for a flying messenger, or 25 miles for other animals. When the messenger arrives, it delivers your message to the creature that you described, replicating the sound of your voice. The messenger speaks only to a creature matching the description you gave. If the messenger doesn’t reach its destination before the spell ends, the message is lost, and the beast makes its way back to where you cast this spell. At Higher Levels. If you cast this spell using a spell slot of 3nd level or higher, the duration of the spell increases by 48 hours for each slot level above 2nd",
                 Classes = new string[] { DnDClass.bard, DnDClass.druid, DnDClass.ranger },
                 SingleTarget = true
@@ -346,6 +345,7 @@ namespace Spells
                 Name = "Augury",
                 SpellLv = SpellLv.second,
                 School = SchoolOfMagic.divination,
+                Ritual = true,
                 CastingTime = StringTime.minute,
                 Range = Range.self,
                 Verbal = true,
@@ -353,7 +353,6 @@ namespace Spells
                 Materials = "specially marked sticks, bones, or similar tokens worth at least 25 gp",
                 SpellCost = 25,
                 Duration = DndTime.instantaneous,
-                Ritual = true,
                 Description = "By casting gem-inlaid sticks, rolling dragon bones, laying out ornate cards, or employing some other divining tool, you receive an omen from an otherworldly entity about the results of a specific course of action that you plan to take within the next 30 minutes. The DM chooses from the following possible omens: - Weal, for good results - Woe, for bad results - Weal and woe, for both good and bad results - Nothing, for results that aren’t especially good or bad The spell doesn’t take into account any possible circumstances that might change the outcome, such as the casting of additional spells or the loss or gain of a companion. If you cast the spell two or more times before completing your next long rest, there is a cumulative 25 percent chance for each casting after the first that you get a random reading. The DM makes this roll in secret.",
                 Classes = new string[] { DnDClass.cleric }
             };
@@ -530,12 +529,12 @@ namespace Spells
                 Name = "Beast Sense",
                 SpellLv = SpellLv.second,
                 School = SchoolOfMagic.divination,
+                Ritual = true,
                 CastingTime = DndTime.action,
                 Range = Range.touch,
                 Somatic = true,
                 Duration = DndTime.concentration + StringTime.hour,
                 Concentration = true,
-                Ritual = true,
                 Description = "You touch a willing beast. For the duration of the spell, you can use your action to see through the beast’s eyes and hear what it hears, and continue to do so until you use your action to return to your normal senses.",
                 Classes = new string[] { DnDClass.druid, DnDClass.ranger },
                 SingleTarget = true
@@ -779,7 +778,7 @@ namespace Spells
                 Description = "A storm cloud appears in the shape of a cylinder that is 10 feet tall with a 60-foot radius, centered on a point you can see 100 feet directly above you. The spell fails if you can’t see a point in the air where the storm cloud could appear (for example, if you are in a room that can’t accommodate the cloud). When you cast the spell, choose a point you can see within range. A bolt of lightning flashes down from the cloud to that point. Each creature within 5 feet of that point must make a Dexterity saving throw. A creature takes 3d10 lightning damage on a failed save, or half as much damage on a successful one. On each of your turns until the spell ends, you can use your action to call down lightning in this way again, targeting the same point or a different one. If you are outdoors in stormy conditions when you cast this spell, the spell gives you control over the existing storm instead of creating a new one. Under such conditions, the spell’s damage increases by 1d10. At Higher Levels. When you cast this spell using a spell slot of 4th or higher level, the damage increases by 1d10 for each slot level above 3rd",
                 Classes = new string[] { DnDClass.druid },
                 SavingThrows = new string[] { SavingThrows.dexterity },
-                DamageTypes = new string[] { DamageType.lightning },
+                DamageTypes = new string[] { DamageType.lightning }
             };
             Spells.Add(callLightning.Name, callLightning);
 
@@ -817,7 +816,7 @@ namespace Spells
                 Description = "You create a bolt of lightning that arcs toward a target of your choice that you can see within range. Three bolts then leap from that target to as many as three other targets, each of which must be within 30 feet of the first target. A target can be a creature or an object and can be targeted by only one of the bolts. A target must make a Dexterity saving throw. The target takes 10d8 lightning damage on a failed save, or half as much damage on a successful one. At Higher Levels. When you cast this spell using a spell slot of 7th level or higher, one additional bolt leaps from the first target to another target for each slot level above 6th",
                 Classes = new string[] { DnDClass.sorcerer, DnDClass.wizard },
                 SavingThrows = new string[] { SavingThrows.dexterity },
-                DamageTypes = new string[] { DamageType.lightning },
+                DamageTypes = new string[] { DamageType.lightning }
             };
             Spells.Add(chainLightning.Name, chainLightning);
 
@@ -855,9 +854,417 @@ namespace Spells
                 Classes = new string[] { DnDClass.sorcerer, DnDClass.warlock, DnDClass.wizard },
                 SingleTarget = true,
                 SavingThrows = new string[] { SavingThrows.ranged },
-                DamageTypes = new string[] { DamageType.necrotic },
+                DamageTypes = new string[] { DamageType.necrotic }
             };
             Spells.Add(chillTouch.Name, chillTouch);
+
+            Spell chromaticOrb = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Chromatic Orb",
+                SpellLv = SpellLv.first,
+                School = SchoolOfMagic.evocation,
+                CastingTime = DndTime.action,
+                Range = "90 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a diamond worth at least 50gp",
+                SpellCost = 50,
+                Duration = DndTime.instantaneous,
+                Description = "You hurl a 4-inch-diameter sphere of energy at a creature that you can see within range. You choose acid, cold, fire, lightning, poison, or thunder for the type of orb you create, and then make a ranged spell attack against the target. If the attack hits, the creature takes 3d8 damage of the type you chose. At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
+                Classes = new string[] { DnDClass.sorcerer, DnDClass.wizard },
+                SingleTarget = true,
+                SavingThrows = new string[] { SavingThrows.ranged },
+                DamageTypes = new string[] { DamageType.acid, DamageType.cold, DamageType.fire, DamageType.lightning, DamageType.poison, DamageType.thunder }
+            };
+            Spells.Add(chromaticOrb.Name, chromaticOrb);
+
+            Spell circleOfDeath = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Circle of Death",
+                SpellLv = SpellLv.sixth,
+                School = SchoolOfMagic.necromancy,
+                CastingTime = DndTime.action,
+                Range = "150 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "the powder of a crushed black pearl worth at least 500 gp",
+                SpellCost = 500,
+                Duration = DndTime.instantaneous,
+                Description = "A sphere of negative energy ripples out in a 60-footradius sphere from a point within range. Each creature in that area must make a Constitution saving throw. A target takes 8d6 necrotic damage on a failed save, or half as much damage on a successful one. At Higher Levels. When you cast this spell using a spell slot of 7th level or higher, the damage increases by 2d6 for each slot level above 6th.",
+                Classes = new string[] { DnDClass.sorcerer, DnDClass.warlock, DnDClass.wizard },
+                SavingThrows = new string[] { SavingThrows.constitution },
+                DamageTypes = new string[] { DamageType.necrotic }
+            };
+            Spells.Add(circleOfDeath.Name, circleOfDeath);
+
+            Spell circleOfPower = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Cicle of Power",
+                SpellLv = SpellLv.fifth,
+                School = SchoolOfMagic.abjuration,
+                CastingTime = DndTime.action,
+                Range = Range.self + ", 30" + Range.footRadius,
+                Verbal = true,
+                Duration = DndTime.concentration + "10 " + StringTime.minutes,
+                Concentration = true,
+                Description = "Divine energy radiates from you, distorting and diffusing magical energy within 30 feet of you. Until the spell ends, the sphere moves with you, centered on you. For the duration, each friendly creature in the area (including you) has advantage on saving throws against spells and other magical effects. Additionally, when an affected creature succeeds on a saving throw made against a spell or magical effect that allows it to make a saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw",
+                Classes = new string[] { DnDClass.paladin }
+            };
+            Spells.Add(bladeBarrier.Name, bladeBarrier);
+
+            Spell clairvoyance = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Clairvoyance",
+                SpellLv = SpellLv.third,
+                School = SchoolOfMagic.divination,
+                CastingTime = "10 " + StringTime.minutes,
+                Range = Range.mile,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a focus worth at least 100 gp, either a jeweled horn for hearing or a glass eye for seeing",
+                SpellCost =100 ,
+                Duration = DndTime.concentration + "10 " + StringTime.minutes,
+                Concentration = true,
+                Description = "You create an invisible sensor within range in a location familiar to you (a place you have visited or seen before) or in an obvious location that is unfamiliar to you (such as behind a door, around a corner, or in a grove of trees). The sensor remains in place for the duration, and it can’t be attacked or otherwise interacted with. When you cast the spell, you choose seeing or hearing. You can use the chosen sense through the sensor as if you were in its space. As your action, you can switch between seeing and hearing. A creature that can see the sensor (such as a creature benefiting from see invisibility or truesight) sees a luminous, intangible orb about the size of your fist.",
+                Classes = new string[] { DnDClass.bard, DnDClass.cleric, DnDClass.sorcerer, DnDClass.wizard }
+            };
+            Spells.Add(clairvoyance.Name, clairvoyance);
+
+            Spell clone = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Clone",
+                SpellLv = SpellLv.eighth,
+                School = SchoolOfMagic.necromancy,
+                CastingTime = StringTime.hour,
+                Range = Range.touch,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a diamond worth at least 1,000 gp and at least 1 cubic inch of flesh of the creature that is to be cloned, which the spell consumes, and a vessel worth at least 2,000 gp that has a sealable lid and is large enough to hold a Medium creature, such as a huge urn, coffin, mud-filled cyst in the ground, or crystal container filled with salt water",
+                SpellCost = 3000,
+                Duration = DndTime.instantaneous,
+                Description = "This spell grows an inert duplicate of a living creature as a safeguard against death. This clone forms inside a sealed vessel and grows to full size and maturity after 120 days; you can also choose to have the clone be a younger version of the same creature. It remains inert and endures indefinitely, as long as its vessel remains undisturbed. At any time after the clone matures, if the original creature dies, its soul transfers to the clone, provided that the soul is free and willing to return. The clone is physically identical to the original and has the same personality, memories, and abilities, but none of the original’s equipment. The original creature’s physical remains, if they still exist, become inert and can’t thereafter be restored to life, since the creature’s soul is elsewhere.",
+                Classes = new string[] { DnDClass.wizard }
+            };
+            Spells.Add(clone.Name, clone);
+
+            Spell cloudOfDaggers = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Cloud of Daggers",
+                SpellLv = SpellLv.second,
+                School = SchoolOfMagic.conjuration,
+                CastingTime = DndTime.action,
+                Range = "60 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a silver of glass",
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "You fill the air with spinning daggers in a cube 5 feet on each side, centered on a point you choose within range. A creature takes 4d4 slashing damage when it enters the spell’s area for the first time on a turn or starts its turn there. At Higher Levels. When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 2d4 for each slot level above 2nd.",
+                Classes = new string[] { DnDClass.bard, DnDClass.sorcerer, DnDClass.warlock, DnDClass.wizard  },
+                DamageTypes = new string[] { DamageType.slashing }
+            };
+            Spells.Add(cloudOfDaggers.Name, cloudOfDaggers);
+
+            Spell cloudkill = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Cloudkill",
+                SpellLv = SpellLv.fifth,
+                School = SchoolOfMagic.conjuration,
+                CastingTime = DndTime.action,
+                Range = "120 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.concentration + "10 " + StringTime.minutes,
+                Concentration = true,
+                Description = "You create a 20-foot-radius sphere of poisonous, yellowgreen fog centered on a point you choose within range. The fog spreads around corners. It lasts for the duration or until strong wind disperses the fog, ending the spell. Its area is heavily obscured. When a creature enters the spell’s area for the first time on a turn or starts its turn there, that creature must make a Constitution saving throw. The creature takes 5d8 poison damage on a failed save, or half as much damage on a successful one. Creatures are affected even if they hold their breath or don’t need to breathe. The fog moves 10 feet away from you at the start of each of your turns, rolling along the surface of the ground. The vapors, being heavier than air, sink to the lowest level of the land, even pouring down openings. At Higher Levels. When you cast this spell using a spell slot of 6th level or higher, the damage increases by 1d8 for each slot level above 5th.",
+                Classes = new string[] { DnDClass.sorcerer, DnDClass.wizard },
+                SavingThrows = new string[] { SavingThrows.constitution },
+                DamageTypes = new string[] { DamageType.poison }
+            };
+            Spells.Add(cloudkill.Name, cloudkill);
+
+            Spell colorSpray = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Color Spray",
+                SpellLv = SpellLv.first,
+                School = SchoolOfMagic.illusion,
+                CastingTime = DndTime.action,
+                Range = Range.self + ", 15" + Range.footCone,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a pinch of powder or sand that is colored red, yellow, and blue",
+                Duration = DndTime.round,
+                Description = "A dazzling array of flashing, colored light springs from your hand. Roll 6d10; the total is how many hit points of creatures this spell can effect. Creatures in a 15-foot cone originating from you are affected in ascending order of their current hit points (ignoring unconscious creatures and creatures that can’t see). Starting with the creature that has the lowest current hit points, each creature affected by this spell is blinded until the spell ends. Subtract each creature’s hit points from the total before moving on to the creature with the next lowest hit points. A creature’s hit points must be equal to or less than the remaining total for that creature to be affected.",
+                Classes = new string[] { },
+                Conditions = new string[] { Conditions.blinded }
+            };
+            Spells.Add(colorSpray.Name, colorSpray);
+
+            Spell command = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Command",
+                SpellLv = SpellLv.first,
+                School = SchoolOfMagic.enchantment,
+                CastingTime = DndTime.round,
+                Range = "60 " + Range.footCone,
+                Verbal = true,
+                Duration = DndTime.round,
+                Description = "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn’t understand your language, or if your command is directly harmful to it. Some typical commands and their effects follow. You might issue a command other than one described here. If you do so, the DM determines how the target behaves. If the target can’t follow your command, the spell ends. Approach. The target moves toward you by the shortest and most direct route, ending its turn if it moves within 5 feet of you. Drop. The target drops whatever it is holding and then ends its turn. Flee. The target spends its turn moving away from you by the fastest available means. Grovel. The target falls prone and then ends its turn. Halt. The target doesn’t move and takes no actions. A flying creature stays aloft, provided that it is able to do so. If it must move to stay aloft, it flies the minimum distance needed to remain in the air. At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
+                Classes = new string[] { },
+                SingleTarget = true,
+                SavingThrows = new string[] { SavingThrows.wisdom },
+                Conditions = new string[] { Conditions.prone }
+            };
+            Spells.Add(command.Name, command);
+
+            Spell commune = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Commune",
+                SpellLv = SpellLv.fifth,
+                School = SchoolOfMagic.divination,
+                CastingTime = StringTime.minute,
+                Range = Range.self,
+                Verbal = true,
+                Somatic = true,
+                Materials = "incense and a vial of holy or unholy water",
+                Duration = StringTime.minute,
+                Description = "You contact your deity or a divine proxy and ask up to three questions that can be answered with a yes or no. You must ask your questions before the spell ends. You receive a correct answer for each question. Divine beings aren’t necessarily omniscient, so you might receive “unclear” as an answer if a question pertains to information that lies beyond the deity’s knowledge. In a case where a one-word answer could be misleading or contrary to the deity’s interests, the DM might offer a short phrase as an answer instead. If you cast the spell two or more times before finishing your next long rest, there is a cumulative 25 percent chance for each casting after the first that you get no answer. The DM m akes this roll in secret.",
+                Classes = new string[] { }
+            };
+            Spells.Add(commune.Name, commune);
+
+            Spell communeWithNature = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Commune with Nature",
+                SpellLv = SpellLv.fifth,
+                School = SchoolOfMagic.divination,
+                CastingTime = StringTime.minute,
+                Range = Range.self,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.instantaneous,
+                Description = "You briefly become one with nature and gain knowledge of the surrounding territory. In the outdoors, the spell gives you knowledge of the land within 3 miles of you. In caves and other natural underground settings, the radius is limited to 300 feet. The spell doesn’t function where nature has been replaced by construction, such as in dungeons and towns. You instantly gain knowledge of up to three facts of your choice about any of the following subjects as they relate to the area: - terrain and bodies of water - - prevalent plants, minerals, animals, or peoples - - pow erful celestials, fey, fiends, elementals, or undead - - influence from other planes of existence - - buildings - For example, you could determine the location of powerful undead in the area, the location of major sources of safe drinking water, and the location of any nearby towns.",
+                Classes = new string[] { },
+                SingleTarget = true,
+            };
+            Spells.Add(communeWithNature.Name, communeWithNature);
+
+            Spell compelledDuel = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Compelled Duel",
+                SpellLv = SpellLv.first,
+                School = SchoolOfMagic.enchantment,
+                CastingTime = DndTime.bounusAction,
+                Range = "30 " + Range.feet,
+                Verbal = true,
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "You attempt to compel a creature into a duel. One creature that you can see within range must make a Wisdom saving throw. On a failed save, the creature is drawn to you, com pelled by your divine demand. For the duration, it has disadvantage on attack rolls against creatures other than you, and must make a Wisdom saving throw each time it attempts to move to a space that is more than 30 feet away from you; if it succeeds on this saving throw, this spell doesn’t restrict the target’s movement for that turn. The spell ends if you attack any other creature, if you cast a spell that targets a hostile creature other than the target, if a creature friendly to you damages the target or casts a harmful spell on it, or if you end your turn more than 30 feet away from the target.",
+                Classes = new string[] { },
+                SingleTarget = true,
+                SavingThrows = new string[] { SavingThrows.wisdom }
+            };
+            Spells.Add(compelledDuel.Name, compelledDuel);
+
+            Spell comprehendLanguages = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Comprehend Languages",
+                SpellLv = SpellLv.first,
+                School = SchoolOfMagic.divination,
+                Ritual = true,
+                CastingTime = DndTime.action,
+                Range = Range.self,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a pinch of soot and salt",
+                Duration = StringTime.hour,
+                Description = "For the duration, you understand the literal meaning of any spoken language that you hear. You also understand any written language that you see, but you must be touching the surface on which the words are written. It takes about 1 minute to read one page of text. This spell doesn’t decode secret messages in a text or a glyph, such as an arcane sigil, that isn’t part of a written language.",
+                Classes = new string[] { }
+            };
+            Spells.Add(comprehendLanguages.Name, comprehendLanguages);
+
+            Spell compulsion = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Compulsion",
+                SpellLv = SpellLv.fourth,
+                School = SchoolOfMagic.enchantment,
+                CastingTime = DndTime.action,
+                Range = "30 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "Creatures of your choice that you can see within range and that can hear you must make a Wisdom saving throw. A target automatically succeeds on this saving throw if it can’t be charmed. On a failed save, a target is affected by this spell. Until the spell ends, you can use a bonus action on each of your turns to designate a direction that is horizontal to you. Each affected target must use as much of its movement as possible to move in that direction on its next turn. It can take its action before it moves. After moving in this way, it can make another Wisdom saving to try to end the effect. A target isn’t compelled to move into an obviously deadly hazard, such as a fire or pit, but it will provoke opportunity attacks to move in the designated direction.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.wisdom }
+            };
+            Spells.Add(compulsion.Name, compulsion);
+
+            Spell coneOfCold = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Cone of Cold",
+                SpellLv = SpellLv.fifth,
+                School = SchoolOfMagic.evocation,
+                CastingTime = DndTime.action,
+                Range = Range.self + ", 60" + Range.footCone,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a small crystal or glass cone",
+                Duration = DndTime.instantaneous,
+                Description = "A blast of cold air erupts from your hands. Each creature in a 60-foot cone must make a Constitution saving throw. A creature takes 8d8 cold damage on a failed save, or half as much damage on a successful one. A creature killed by this spell becomes a frozen statue until it thaws. At Higher Levels. When you cast this spell using a spell slot of 6th level or higher, the damage increases by 1d8 for each slot level above 5th.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.constitution },
+                DamageTypes = new string[] { DamageType.cold }
+            };
+            Spells.Add(coneOfCold.Name, coneOfCold);
+
+            Spell confusion = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Confusion",
+                SpellLv = SpellLv.fourth,
+                School = SchoolOfMagic.enchantment,
+                CastingTime = DndTime.action,
+                Range = "90 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "three nut shells",
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "This spell assaults and twists creatures' minds, spawning delusions and provoking uncontrolled action. Each creature in a 10-foot-radius sphere centered on a point you choose within range must succeed on a Wisdom saving throw when you cast this spell or be affected by it. An affected target can’t take reactions and must roll a d10 at the start of each of its turns to determine its behavior for that turn. ~d10 Behavior~ ~1 The creature uses all its movement to move in a random direction. To determine the direction, roll a d8 and assign a direction to each die face. The creature doesn’t take an action this turn. ~2-6 The creature doesn’t move or take actions this turn. ~7-8 The creature uses its action to make a melee attack against a randomly determined creature within its reach. If there is no creature within its reach, the creature does nothing this turn. ~9-10 The creature can act and move normally~ At the end of each of its turns, an affected target can make a Wisdom saving throw. If it succeeds, this effect ends for that target. At Higher Levels. When you cast this spell using a spell slot of 5th level or higher, the radius of the sphere increases by 5 feet for each slot level above 4th.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.wisdom }
+            };
+            Spells.Add(confusion.Name, confusion);
+
+            Spell conjureAnimals = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Conjure Animals",
+                SpellLv = SpellLv.third,
+                School = SchoolOfMagic.conjuration,
+                CastingTime = DndTime.action,
+                Range = "60 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.concentration + StringTime.hour,
+                Concentration = true,
+                Description = "You summon fey spirits that take the form of beasts and appear in unoccupied spaces that you can see within range. Choose one of the following options for what appears: - One beast of challenge rating 2 or lower - - Two beasts of challenge rating 1 or lower - - Four beasts of challenge rating 1/2 or lower - - Eight beasts of challenge rating 1/4 or lower - Each beast is also considered fey, and it disappears when it drops to 0 hit points or when the spell ends. The summoned creatures are friendly to you and your companions. Roll initiative for the summoned creatures as a group, which has its own turns. They obey any verbal commands that you issue to them (no action required by you). If you don’t issue any commands to them, they defend themselves from hostile creatures, but otherwise take no actions. The DM has the creatures’ statistics. At Higher Levels. When you cast this spell using certain higher-level spell slots, you choose one of the summoning options above, and more creatures appear: twice as many with a 5th-level slot, three times as many with a 7th-level slot, and four times as many with a 9th-level slot.",
+                Classes = new string[] { }
+            };
+            Spells.Add(conjureAnimals.Name, conjureAnimals);
+
+            Spell conjureBarrage = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Conjure Barrage",
+                SpellLv = SpellLv.third,
+                School = SchoolOfMagic.conjuration,
+                CastingTime = DndTime.action,
+                Range = Range.self + ", 60" + Range.footCone,
+                Verbal = true,
+                Somatic = true,
+                Materials = "one piece of ammunition or a thrown weapon",
+                Duration = DndTime.instantaneous,
+                Description = "You throw a nonmagical weapon or fire a piece of nonmagical ammunition into the air to create a cone of identical weapons that shoot forward and then disappear. Each creature in a 60-foot cone must succeed on a Dexterity saving throw. A creature takes 3d8 damage on a failed save, or half as much damage on a successful one. The damage type is the same as that of the weapon or ammunition used as a component.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.dexterity },
+                DamageTypes = new string[] { DamageType.bludgeoning, DamageType.slashing, DamageType.piercing }
+            };
+            Spells.Add(conjureBarrage.Name, conjureBarrage);
+
+            Spell conjureCelestial = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Conjure Celestial",
+                SpellLv = SpellLv.seventh,
+                School = SchoolOfMagic.conjuration,
+                CastingTime = StringTime.minute,
+                Range = "90 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.concentration + StringTime.hour,
+                Concentration = true,
+                Description = "You summon a celestial of challenge rating 4 or lower, which appears in an unoccupied space that you can see within range. The celestial disappears when it drops to 0 hit points or when the spell ends. The celestial is friendly to you and your companions for the duration. Roll initiative for the celestial, which has its own turns. It obeys any verbal commands that you issue to it (no action required by you), as long as they don’t violate its alignment. If you don’t issue any commands to the celestial, it defends itself from hostile creatures but otherwise takes no actions. The DM has the celestial’s statistics. At Higher Levels. When you cast this spell using a 9th-level spell slot, you summon a celestial of challenge rating 5 or lower.",
+                Classes = new string[] { }
+            };
+            Spells.Add(conjureCelestial.Name, conjureCelestial);
+
+            Spell conjureElemental = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Conjure Elemental",
+                SpellLv = SpellLv.fifth,
+                School = SchoolOfMagic.conjuration,
+                CastingTime = StringTime.minute,
+                Range = "90 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "burning incense for air, soft clay for earth, sulfur and phosphorus for fire, or water and sand for water",
+                Duration = DndTime.concentration + StringTime.hour,
+                Concentration = true,
+                Description = "You call forth an elemental servant. Choose an area of air, earth, fire, or water that fills a 10-foot cube within range. An elemental of challenge rating 5 or lower appropriate to the area you chose appears in an unoccupied space within 10 feet of it. For example, a fire elemental emerges from a bonfire, and an earth elemental rises up from the ground. The elemental disappears when it drops to 0 hit points or when the spell ends. The elemental is friendly to you and your companions for the duration. Roll initiative for the elemental, which has its own turns. It obeys any verbal comm ands that you issue to it (no action required by you). If you don’t issue any commands to the elemental, it defends itself from hostile creatures but otherwise takes no actions. If your concentration is broken, the elemental doesn’t disappear. Instead, you lose control of the elemental, it becomes hostile toward you and your companions, and it might attack. An uncontrolled elemental can’t be dismissed by you, and it disappears 1 hour after you summoned it. The DM has the elemental’s statistics. At Higher Levels. When you cast this spell using a spell slot of 6th level or higher, the challenge rating increases by 1 for each slot level above 5th.",
+                Classes = new string[] { },
+            };
+            Spells.Add(conjureElemental.Name, conjureElemental);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
