@@ -35,6 +35,7 @@ namespace Spells
         public const string hemisphere = "hemisphere";
         public const string sight = "Sight";
         public const string unlimited = "Unlimited";
+        public const string special = "Special";
     }
 
     public static class DndTime
