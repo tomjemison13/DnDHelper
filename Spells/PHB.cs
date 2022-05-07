@@ -15,6 +15,7 @@ namespace Spells
             Spells = new Dictionary<string, Spell>();
 
             #region A
+
             Spell acidSplash = new Spell
             {
                 Source = sourceTitle,
@@ -47,7 +48,8 @@ namespace Spells
                 Materials = "a tiny strip of white cloth",
                 Duration = "8 "+StringTime.hours,
                 Description = "Your spell bolsters your allies with toughness and resolve. Choose up to three creatures within range. Each target’s hit point maximum and current hit points increase by 5 for the duration. At Higher Levels. When you cast this spell using a spell slot of 3rd level or higher, a target’s hit points increase by an additional 5 for each slot level above 2nd.",
-                Classes = new string[] { DnDClass.cleric, DnDClass.paladin }
+                Classes = new string[] { DnDClass.cleric, DnDClass.paladin },
+                SingleTarget = true
             };
             Spells.Add(aid.Name, aid);
 
@@ -226,6 +228,7 @@ namespace Spells
                 Duration = "10 " + StringTime.days,
                 Description = "This spell attracts or repels creatures of your choice. You target something within range, either a Huge or smaller object or creature or an area that is no larger than a 200-foot cube. Then specify a kind of intelligent creature, such as red dragons, goblins, or vampires. You invest the target with an aura that either attracts or repels the specified creatures for the duration. Choose antipathy or sympathy as the aura’s effect. -Antipathy-. The enchantment causes creatures of the kind you designated to feel an intense urge to leave the area and avoid the target. When such a creature can see the target or comes within 60 feet of it, the creature must succeed on a Wisdom saving throw or become frightened. The creature remains frightened while it can see the target or is within 60 feet of it. While frightened by the target, the creature must use its movement to move to the nearest safe spot from which it can’t see the target. If the creature moves more than 60 feet from the target and can’t see it, the creature is no longer frightened, but the creature becomes frightened again if it regains sight of the target or moves within 60 feet of it. -Sympathy-. The enchantment causes the specified creatures to feel an intense urge to approach the target while within 60 feet of it or able to see it. When such a creature can see the target or com es within 60 feet of it, the creature must succeed on a Wisdom saving throw or use its movement on each of its turns to enter the area or move within reach of the target. When the creature has done so, it can’t willingly move away from the target. If the target damages or otherwise harms an affected creature, the affected creature can make a Wisdom saving throw to end the effect, as described below. -Ending the Effect-. If an affected creature ends its turn while not within 60 feet of the target or able to see it, the creature makes a Wisdom saving throw. On a successful save, the creature is no longer affected by the target and recognizes the feeling o f repugnance or attraction as magical. In addition, a creature affected by the spell is allowed another Wisdom saving throw every 24 hours while the spell persists. A creature that successfully saves against this effect is immune to it for 1 minute, after which time it can be affected again.",
                 Classes = new string[] { DnDClass.druid, DnDClass.wizard},
+                SingleTarget = true,
                 SavingThrows = new string[] { SavingThrows.wisdom },
                 Conditions = new string[] { Conditions.frightened}
             };
@@ -421,6 +424,7 @@ namespace Spells
                 Duration = DndTime.instantaneous,
                 Description = "After spending the casting time tracing magical pathways within a precious gemstone, you touch a Huge or sm aller beast or plant. The target must have either no Intelligence score or an Intelligence of 3 or less. The target gains an Intelligence of 10. The target also gains the ability to speak one language you know. If the target is a plant, it gains the ability to move its limbs, roots, vines, creepers, and so forth, and it gains senses similar to a human’s. Your DM chooses statistics appropriate for the awakened plant, such as the statistics for the awakened shrub or the awakened tree. The awakened beast or plant is charm ed by you for 30 days or until you or your com panions do anything harmful to it. W hen the charm ed condition ends, the awakened creature chooses whether to remain friendly to you, based on how you treated it while it w as charmed. ",
                 Classes = new string[] { DnDClass.bard, DnDClass.druid,  },
+                SingleTarget = true,
                 Conditions = new string[] { Conditions.charmed }
             };
             Spells.Add(awaken.Name, awaken);
@@ -444,6 +448,7 @@ namespace Spells
                 Concentration = true,
                 Description = "Up to three creatures of your choice that you can see within range must make Charisma saving throws. Whenever a target that fails this saving throw makes an attack roll or a saving throw before the spell ends, the target must roll a d4 and subtract the number rolled from the attack roll or saving throw. At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st.",
                 Classes = new string[] { DnDClass.bard, DnDClass.cleric, },
+                SingleTarget = true,
                 SavingThrows = new string[] { SavingThrows.charisma}
             };
             Spells.Add(bane.Name, bane);
@@ -632,6 +637,7 @@ namespace Spells
                 Concentration = true,
                 Description = "You bless up to three creatures of your choice within range. Whenever a target m akes an attack roll or a saving throw before the spell ends, the target can roll a d4 and add the number rolled to the attack roll or saving throw. At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st.",
                 Classes = new string[] { DnDClass.cleric, DnDClass.paladin },
+                SingleTarget = true
             };
             Spells.Add(bless.Name, bless);
 
@@ -1110,6 +1116,7 @@ namespace Spells
                 Concentration = true,
                 Description = "Creatures of your choice that you can see within range and that can hear you must make a Wisdom saving throw. A target automatically succeeds on this saving throw if it can’t be charmed. On a failed save, a target is affected by this spell. Until the spell ends, you can use a bonus action on each of your turns to designate a direction that is horizontal to you. Each affected target must use as much of its movement as possible to move in that direction on its next turn. It can take its action before it moves. After moving in this way, it can make another Wisdom saving to try to end the effect. A target isn’t compelled to move into an obviously deadly hazard, such as a fire or pit, but it will provoke opportunity attacks to move in the designated direction.",
                 Classes = new string[] { },
+                SingleTarget = true,
                 SavingThrows = new string[] { SavingThrows.wisdom }
             };
             Spells.Add(compulsion.Name, compulsion);
@@ -1362,7 +1369,8 @@ namespace Spells
                 SpellCost = 50,
                 Duration = DndTime.untilDispelled,
                 Description = "A flame, equivalent in brightness to a torch, springs forth from an object that you touch. The effect looks like a regular flame, but it creates no heat and doesn’t use oxygen. A continual flame can be covered or hidden but not smothered or quenched.",
-                Classes = new string[] { }
+                Classes = new string[] { },
+                SingleTarget = true
             };
             Spells.Add(continualFlame.Name, continualFlame);
 
@@ -1434,7 +1442,8 @@ namespace Spells
                 Somatic = true,
                 Duration = DndTime.instantaneous,
                 Description = "You attempt to interrupt a creature in the process of casting a spell. If the creature is casting a spell of 3rd level or lower, its spell fails and has no effect. If it is casting a spell of 4th level or higher, make an ability check using your spellcasting ability. The DC equals 10 + the spell’s level. On a success, the creature’s spell fails and has no effect. At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, the interrupted spell has no effect if its level is less than or equal to the level of the spell slot you used.",
-                Classes = new string[] { }     
+                Classes = new string[] { },
+                SingleTarget = true
             };
             Spells.Add(counterSpell.Name, counterSpell);
 
@@ -1556,7 +1565,8 @@ namespace Spells
                 Somatic = true,
                 Duration = DndTime.instantaneous,
                 Description = "A creature you touch regains a number of hit points equal to 1d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs. At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d8 for each slot level above 1st.",
-                Classes = new string[] { }
+                Classes = new string[] { },
+                SingleTarget = true
             };
             Spells.Add(cureWounds.Name, cureWounds);
 
@@ -1628,7 +1638,8 @@ namespace Spells
                 Somatic = true,
                 Duration = "8 " + StringTime.hours,
                 Description = "You touch a creature and grant it a measure of protection from death. The first time the target would drop to 0 hit points as a result of taking damage, the target instead drops to 1 hit point, and the spell ends. If the spell is still in effect when the target is subjected to an effect that would kill it instantaneously without dealing damage, that effect is instead negated against the target, and the spell ends.",
-                Classes = new string[] { }
+                Classes = new string[] { },
+                SingleTarget = true
             };
             Spells.Add(deathWard.Name, deathWard);
 
@@ -1912,6 +1923,7 @@ namespace Spells
                 Duration = DndTime.instantaneous,
                 Description = "You utter a divine word, imbued with the power that shaped the world at the dawn of creation. Choose any number of creatures you can see within range. Each creature that can hear you must make a Charisma saving throw. On a failed save, a creature suffers an effect based on its current hit points: - 50 hit points or fewer: deafened for 1 minute - - 40 hit points or fewer: deafened and blinded for 10 minutes - - 30 hit points or fewer: blinded, deafened, and stunned for 1 hour - - 20 hit points or fewer: killed instantly - Regardless of its current hit points, a celestial, an elemental, a fey, or a fiend that fails its save is forced back to its plane of origin (if it isn’t there already) and can’t return to your current plane for 24 hours by any means short of a wish spell.",
                 Classes = new string[] { },
+                SingleTarget = true,
                 SavingThrows = new string[] { SavingThrows.charisma },
                 Conditions = new string[] { Conditions.deafened, Conditions.blinded, Conditions.stunned }
             };
@@ -2010,6 +2022,7 @@ namespace Spells
                 Duration = "8 " + StringTime.hours,
                 Description = "This spell shapes a creature’s dreams. Choose a creature known to you as the target of this spell. The target must be on the same plane of existence as you. Creatures that don’t sleep, such as elves, can’t be contacted by this spell. You, or a willing creature you touch, enters a trance state, acting as a messenger. While in the trance, the messenger is aware of his or her surroundings, but can’t take actions or move. If the target is asleep, the messenger appears in the target’s dream s and can converse with the target as long as it remains asleep, through the duration of the spell. The messenger can also shape the environment o f the dream, creating landscapes, objects, and other images. The messenger can emerge from the trance at any time, ending the effect of the spell early. The target recalls the dream perfectly upon waking. If the target is awake when you cast the spell, the messenger knows it, and can either end the trance (and the spell) or wait for the target to fall asleep, at which point the messenger appears in the target’s dreams. You can make the messenger appear monstrous and terrifying to the target. If you do, the messenger can deliver a message of no more than ten words and then the target must make a Wisdom saving throw. On a failed save, echoes of the phantasmal monstrosity spawn a nightmare that lasts the duration of the target’s sleep and prevents the target from gaining any benefit from that rest. In addition, when the target wakes up, it takes 3d6 psychic damage. If you have a body part, lock of hair, clipping from a nail, or similar portion of the target’s body, the target makes its saving throw with disadvantage.",
                 Classes = new string[] { },
+                SingleTarget = true,
                 SavingThrows = new string[] { SavingThrows.wisdom },
                 DamageTypes = new string[] { DamageType.psychic }
             };
@@ -2032,7 +2045,237 @@ namespace Spells
             Spells.Add(druidcraft.Name, druidcraft);
 
             #endregion
+
+            #region E
+
+            Spell earthquake = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Earthquake",
+                SpellLv = SpellLv.eighth,
+                School = SchoolOfMagic.evocation,
+                CastingTime = DndTime.action,
+                Range = "500 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a pinch of dirt, a piece of rock, and a lump of clay",
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "You create a seismic disturbance at a point on the ground that you can see within range. For the duration, an intense tremor rips through the ground in a 100-foot-radius circle centered on that point and shakes creatures and structures in contact with the ground in that area. The ground in the area becomes difficult terrain. Each creature on the ground that is concentrating must make a Constitution saving throw. On a failed save, the creature’s concentration is broken. When you cast this spell and at the end of each turn you spend concentrating on it, each creature on the ground in the area must make a Dexterity saving throw. On a failed save, the creature is knocked prone. This spell can have additional effects depending on the terrain in the area, as determined by the DM. - Fissures. Fissures open throughout the spell’s area at the start of your next turn after you cast the spell. A total of 1d6 such fissures open in locations chosen by the DM. Each is 1d10 x 10 feet deep, 10 feet wide, and extends from one edge of the spell’s area to the opposite side. A creature standing on a spot where a fissure opens must succeed on a Dexterity saving throw or fall in. A creature that successfully saves moves with the fissure’s edge as it opens. A fissure that opens beneath a structure causes it to automatically collapse (see below). - - Structures. The tremor deals 50 bludgeoning damage to any structure in contact with the ground in the area when you cast the spell and at the start of each of your turns until the spell ends. If a structure drops to 0 hit points, it collapses and potentially dam ages nearby creatures. A creature within half the distance of a structure’s height must make a Dexterity saving throw. On a failed save, the creature takes 5d6 bludgeoning damage, is knocked prone, and is buried in the rubble, requiring a DC 20 Strength (Athletics) check as an action to escape. The DM can adjust the DC higher or lower, depending on the nature of the rubble. On a successful save, the creature takes half as much damage and doesn’t fall prone or become buried. -",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.constitution, SavingThrows.dexterity },
+                DamageTypes = new string[] { DamageType.bludgeoning },
+                Conditions = new string[] { Conditions.prone }
+            };
+            Spells.Add(earthquake.Name, earthquake);
+
+            Spell eldritchBlast = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Eldritch Blast",
+                SpellLv = SpellLv.cantrip,
+                School = SchoolOfMagic.evocation,
+                CastingTime = DndTime.action,
+                Range = "120 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.instantaneous,
+                Concentration = true,
+                Description = "A beam of crackling energy streaks toward a creature within range. Make a ranged spell attack against the target. On a hit, the target takes 1dlO force damage. The spell creates more than one beam when you reach higher levels: two beams at 5th level, three beams at 11th level, and four beams at 17th level. You can direct the beams at the same target or at different ones. Make a separate attack roll for each beam.",
+                Classes = new string[] { },
+                SingleTarget = true,
+                SavingThrows = new string[] { SavingThrows.ranged },
+                DamageTypes = new string[] { DamageType.force }
+            };
+            Spells.Add(eldritchBlast.Name, eldritchBlast);
+
+            Spell elementalWeapon = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Elemental Weapon",
+                SpellLv = SpellLv.third,
+                School = SchoolOfMagic.transmutation,
+                CastingTime = DndTime.action,
+                Range = Range.touch,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.concentration + StringTime.hour,
+                Concentration = true,
+                Description = "A nonmagical weapon you touch becomes a magic weapon. Choose one of the following damage types: acid, cold, fire, lightning, or thunder. For the duration, the weapon has a +1 bonus to attack rolls and deals an extra 1d4 damage of the chosen type when it hits. At Higher Levels. When you cast this spell using a spell slot of 5th or 6th level, the bonus to attack rolls increases to +2 and the extra damage increases to 2d4. When you use a spell slot of 7th level or higher, the bonus increases to +3 and the extra damage increases to 3d4.",
+                Classes = new string[] { },
+                DamageTypes = new string[] { DamageType.acid, DamageType.cold, DamageType.fire, DamageType.lightning, DamageType.thunder }
+            };
+            Spells.Add(elementalWeapon.Name, elementalWeapon);
+
+            Spell enhanceAbility = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Enhance Ability",
+                SpellLv = SpellLv.second,
+                School = SchoolOfMagic.transmutation,
+                CastingTime = DndTime.action,
+                Range = Range.touch,
+                Verbal = true,
+                Somatic = true,
+                Materials = "fur or a feather from a beast",
+                Duration = DndTime.concentration + StringTime.hour,
+                Concentration = true,
+                Description = "You touch a creature and bestow upon it a magical enhancement. Choose one of the following effects; the target gains that effect until the spell ends. - Bear’s Endurance. The target has advantage on Constitution checks. It also gains 2d6 temporary hit points, which are lost when the spell ends. - - Bull’s Strength. The target has advantage on Strength checks, and his or her carrying capacity doubles. - - Cat’s Grace. The target has advantage on Dexterity checks. It also doesn’t take damage from falling 20 feet or less if it isn’t incapacitated. - - Eagle’s Splendor. The target has advantage on Charisma checks. - - Fox’s Cunning. The target has advantage on Intelligence checks. - - Owl’s Wisdom. The target has advantage on Wisdom checks. - At Higher Levels. W hen you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
+                Classes = new string[] { }
+            };
+            Spells.Add(enhanceAbility.Name, enhanceAbility);
+
+            Spell enlargeReduce = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Enlarge/Reduce",
+                SpellLv = SpellLv.second,
+                School = SchoolOfMagic.transmutation,
+                CastingTime = DndTime.action,
+                Range = "30 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a pinch or powdered iron",
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "You cause a creature or an object you can see within range to grow larger or smaller for the duration. Choose either a creature or an object that is neither worn nor carried. If the target is unwilling, it can make a Constitution saving throw. On a success, the spell has no effect. If the target is a creature, everything it is wearing and carrying changes size with it. Any item dropped by an affected creature returns to normal size at once. - Enlarge. The target’s size doubles in all dimensions, and its weight is multiplied by eight. This growth increases its size by one category—from Medium to Large, for example. If there isn’t enough room for the target to double its size, the creature or object attains the maximum possible size in the space available. Until the spell ends, the target also has advantage on Strength checks and Strength saving throws. The target’s weapons also grow to match its new size. While these weapons are enlarged, the target’s attacks with them deal 1d4 extra damage. - - Reduce. The target’s size is halved in all dimensions, and its weight is reduced to one-eighth of normal. This reduction decreases its size by one category—from Medium to Small, for example. Until the spell ends, the target also has disadvantage on Strength checks and Strength saving throws. The target’s weapons also shrink to match its new size. While these weapons are reduced, the target’s attacks with them deal 1d4 less damage (this can’t reduce the damage below 1). -",
+                Classes = new string[] { },
+                SingleTarget = true,
+                SavingThrows = new string[] { SavingThrows.constitution }
+            };
+            Spells.Add(enlargeReduce.Name, enlargeReduce);
+
+            Spell ensnaringStrike = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Ensnaring Strike",
+                SpellLv = SpellLv.first,
+                School = SchoolOfMagic.conjuration,
+                CastingTime = DndTime.concentration,
+                Range = Range.self,
+                Verbal = true,
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "The next time you hit a creature with a weapon attack before this spell ends, a writhing mass of thorny vines appears at the point of impact, and the target must succeed on a Strength saving throw or be restrained by the magical vines until the spell ends. A Large or larger creature has advantage on this saving throw. If the target succeeds on the save, the vines shrivel away. While restrained by this spell, the target takes 1d6 piercing damage at the start of each of its turns. A creature restrained by the vines or one that can touch the creature can use its action to make a Strength check against your spell save DC. On a success, the target is freed. At Higher Levels. If you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.strength },
+                DamageTypes = new string[] { DamageType.piercing }
+            };
+            Spells.Add(ensnaringStrike.Name, ensnaringStrike);
+
+            Spell entagle = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Entangle",
+                SpellLv = SpellLv.first,
+                School = SchoolOfMagic.conjuration,
+                CastingTime = DndTime.action,
+                Range = "90 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "Grasping weeds and vines sprout from the ground in a 20-foot square starting from a point within range. For the duration, these plants turn the ground in the area into difficult terrain. A creature in the area when you cast the spell must succeed on a Strength saving throw or be restrained by the entangling plants until the spell ends. A creature restrained by the plants can use its action to make a Strength check against your spell save DC. On a success, it frees itself. When the spell ends, the conjured plants wilt away.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.strength },
+                Conditions = new string[] { Conditions.restrained }
+            };
+            Spells.Add(entagle.Name, entagle);
+
+            Spell enthrall = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Entrhall",
+                SpellLv = SpellLv.second,
+                School = SchoolOfMagic.enchantment,
+                CastingTime = DndTime.action,
+                Range = "60 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = StringTime.minute,
+                Description = "You weave a distracting string of words, causing creatures of your choice that you can see within range and that can hear you to make a Wisdom saving throw. Any creature that can’t be charmed succeeds on this saving throw automatically, and if you or your companions are fighting a creature, it has advantage on the save. On a failed save, the target has disadvantage on Wisdom (Perception) checks made to perceive any creature other than you until the spell ends or until the target can no longer hear you. The spell ends if you are incapacitated or can no longer speak.",
+                Classes = new string[] { },
+                SingleTarget = true,
+                SavingThrows = new string[] { SavingThrows.wisdom },
+                Conditions = new string[] { Conditions.charmed }
+            };
+            Spells.Add(enthrall.Name, enthrall);
+            
+            Spell etherealness = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Etherealness",
+                SpellLv = SpellLv.seventh,
+                School = SchoolOfMagic.transmutation,
+                CastingTime = DndTime.action,
+                Range = Range.self,
+                Verbal = true,
+                Somatic = true,
+                Duration = "Up to 8" + StringTime.hours,
+                Description = "You step into the border regions of the Ethereal Plane, in the area where it overlaps with your current plane. You remain in the Border Ethereal for the duration or until you use your action to dis iss the spell. During this time, you can move in any direction. If you move up or down, every foot of movement costs an extra foot. You can see and hear the plane you originated from, but everything there looks gray, and you can’t see anything more than 60 feet away. While on the Ethereal Plane, you can only affect and be affected by other creatures on that plane. Creatures that aren't on the Ethereal Plane can’t perceive you and can’t interact with you, unless a special ability or magic has given them the ability to do so. You ignore all objects and effects that aren’t on the Ethereal Plane, allowing you to move through objects you perceive on the plane you originated from. When the spell ends, you immediately return to the plane you originated from in the spot you currently occupy. If you occupy the same spot as a solid object or creature when this happens, you are immediately shunted to the nearest unoccupied space that you can occupy and take force damage equal to twice the number of feet you are moved. This spell has no effect if you cast it while you are on the Ethereal Plane or a plane that doesn’t border it, such as one o f the Outer Planes. At Higher Levels. When you cast this spell using a spell slot of 8th level or higher, you can target up to three willing creatures (including you) for each slot level above 7th. The creatures must be within 10 feet of you when you cast the spell.",
+                Classes = new string[] { }
+            };
+            Spells.Add(etherealness.Name, etherealness);
+
+            Spell evardsBlackTentacles = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Evard's Black Tentacles",
+                SpellLv = SpellLv.fourth,
+                School = SchoolOfMagic.conjuration,
+                CastingTime = DndTime.action,
+                Range = "90 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a piece of tentacle from a giant octopus or a giant squid",
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "Squirming, ebony tentacles fill a 20-foot square on ground that you can see within range. For the duration, these tentacles turn the ground in the area into difficult terrain. When a creature enters the affected area for the first time on a turn or starts its turn there, the creature must succeed on a Dexterity saving throw or take 3d6 bludgeoning damage and be restrained by the tentacles until the spell ends. A creature that starts its turn in the area and is already restrained by the tentacles takes 3d6 bludgeoning damage. A creature restrained by the tentacles can use its action to make a Strength or Dexterity check (its choice) against your spell save DC. On a success, it frees itself.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.dexterity },
+                DamageTypes = new string[] { DamageType.bludgeoning },
+                Conditions = new string[] { Conditions.restrained }
+            };
+            Spells.Add(evardsBlackTentacles.Name, evardsBlackTentacles);
+
+            Spell expeditiousRetreat = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Expeditious Retreat",
+                SpellLv = SpellLv.first,
+                School = SchoolOfMagic.transmutation,
+                CastingTime = DndTime.bounusAction,
+                Range = Range.self,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.concentration + "10 " + StringTime.minutes,
+                Concentration = true,
+                Description = "This spell allows you to move at an incredible pace. When you cast this spell, and then as a bonus action on each of your turns until the spell ends, you can take the Dash action.",
+                Classes = new string[] { }
+            };
+            Spells.Add(expeditiousRetreat.Name, expeditiousRetreat);
+
+            Spell eyebite = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Eyebite",
+                SpellLv = SpellLv.sixth,
+                School = SchoolOfMagic.necromancy,
+                CastingTime = DndTime.action,
+                Range = Range.self,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "For the spell’s duration, your eyes become an inky void imbued with dread power. One creature of your choice within 60 feet of you that you can see must succeed on a Wisdom saving throw or be affected by one of the following effects of your choice for the duration. On each of your turns until the spell ends, you can use your action to target another creature but can’t target a creature again if it has succeeded on a saving throw against this casting of eyebite. - Asleep. The target falls unconscious. It wakes up if it takes any damage or if another creature uses its action to shake the sleeper awake. - - Panicked. The target is frightened of you. On each of its turns, the frightened creature must take the Dash action and move away from you by the safest and shortest available route, unless there is nowhere to move. If the target moves to a place at least 60 feet away from you where it can no longer see you, this effect ends. - - Sickened. The target has disadvantage on attack rolls and ability checks. At the end of each of its turns, it can make another Wisdom saving throw. If it succeeds, the effect ends. -",
+                Classes = new string[] { },
+                SingleTarget = true,
+                SavingThrows = new string[] { SavingThrows.wisdom },
+                Conditions = new string[] { Conditions.frightened }
+            };
+            Spells.Add(eyebite.Name, eyebite);
+
+            #endregion
         }
     }
-    
 }
