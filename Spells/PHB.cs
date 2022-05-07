@@ -913,7 +913,7 @@ namespace Spells
                 Description = "Divine energy radiates from you, distorting and diffusing magical energy within 30 feet of you. Until the spell ends, the sphere moves with you, centered on you. For the duration, each friendly creature in the area (including you) has advantage on saving throws against spells and other magical effects. Additionally, when an affected creature succeeds on a saving throw made against a spell or magical effect that allows it to make a saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw",
                 Classes = new string[] { DnDClass.paladin }
             };
-            Spells.Add(bladeBarrier.Name, bladeBarrier);
+            Spells.Add(circleOfPower.Name, circleOfPower);
 
             Spell clairvoyance = new Spell
             {
@@ -1223,25 +1223,434 @@ namespace Spells
             };
             Spells.Add(conjureElemental.Name, conjureElemental);
 
+            Spell conjureFey = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Conjure Fey",
+                SpellLv = SpellLv.sixth,
+                School = SchoolOfMagic.conjuration,
+                CastingTime = StringTime.minute,
+                Range = "90 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.concentration + StringTime.hour,
+                Concentration = true,
+                Description = "You summon a fey creature of challenge rating 6 or lower, or a fey spirit that takes the form of a beast of challenge rating 6 or lower. It appears in an unoccupied space that you can see within range. The fey creature disappears when it drops to 0 hit points or when the spell ends. The fey creature is friendly to you and your companions for the duration. Roll initiative for the creature, which has its own turns. It obeys any verbal commands that you issue to it (no action required by you), as long as they don't violate its alignment. If you don’t issue any commands to the fey creature, it defends itself from hostile creatures but otherwise takes no actions. If your concentration is broken, the fey creature doesn’t disappear. Instead, you lose control of the fey creature, it becomes hostile toward you and your companions, and it might attack. An uncontrolled fey creature can't be dismissed by you, and it disappears 1 hour after you summoned it. The DM has the fey creature’s statistics. At Higher Levels. When you cast this spell using a spell slot of 7th level or higher, the challenge rating increases by 1 for each slot level above 6th.",
+                Classes = new string[] { },
+            };
+            Spells.Add(conjureFey.Name, conjureFey);
 
+            Spell conjureMinorElementala = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Conjure Minor Elementals",
+                SpellLv = SpellLv.fourth,
+                School = SchoolOfMagic.conjuration,
+                CastingTime = StringTime.minute,
+                Range = "90 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.concentration + StringTime.hour,
+                Concentration = true,
+                Description = "You summon elementals that appear in unoccupied spaces that you can see within range. You choose one the following options for what appears: - One elemental of challenge rating 2 or lower - - Two elementals o f challenge rating 1 or lower - - Four elementals of challenge rating 1/2 or lower - - Eight elementals of challenge rating 1/4 or lower. - An elemental summoned by this spell disappears when it drops to 0 hit points or when the spell ends. The summoned creatures are friendly to you and your companions. Roll initiative for the summoned creatures as a group, which has its ow n turns. They obey any verbal commands that you issue to them (no action required by you). If you don’t issue any commands to them, they defend themselves from hostile creatures, but otherwise take no actions. The DM has the creatures' statistics. At Higher Levels. When you cast this spell using certain higher-level spell slots, you choose one of the summoning options above, and m ore creatures appear: twice as many with a 6th-level slot and three times as many with an 8th-level slot.",
+                Classes = new string[] { },
+            };
+            Spells.Add(conjureMinorElementala.Name, conjureMinorElementala);
 
+            Spell conjureVolley = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Conjure Volley",
+                SpellLv = SpellLv.fifth,
+                School = SchoolOfMagic.conjuration,
+                CastingTime = DndTime.action,
+                Range = "150 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "one piece of ammunition or one throwing weapon",
+                Duration = DndTime.instantaneous,
+                Description = "You fire a piece of nonmagical ammunition from a ranged weapon or throw a nonmagical weapon into the air and choose a point within range. Hundreds of duplicates of the ammunition or weapon fall in a volley from above and then disappear. Each creature in a 40-foot-radius. 20-foot-high cylinder centered on that point must make a Dexterity saving throw. A creature takes 8d8 damage on a failed save, or half as much damage on a successful one. The damage type is the same as that of the ammunition or weapon.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.dexterity },
+                DamageTypes = new string[] { DamageType.bludgeoning, DamageType.slashing, DamageType.piercing }
+            };
+            Spells.Add(conjureVolley.Name, conjureVolley);
 
+            Spell conjureWoodlandBeings = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Conjure Woodland Beings",
+                SpellLv = SpellLv.fourth,
+                School = SchoolOfMagic.conjuration,
+                CastingTime = DndTime.action,
+                Range = "60 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "one holly berry per creature summoned",
+                Duration = DndTime.concentration + StringTime.hour,
+                Concentration = true,
+                Description = "You summon fey creatures that appear in unoccupied spaces that you can see within range. Choose one of the following options for what appears: - One fey creature of challenge rating 2 or lower - - Two fey creatures of challenge rating 1 or lower - - Four fey creatures of challenge rating 1/2 or lower - - Eight fey creatures of challenge rating 1/4 or lower - A summoned creature disappears when it drops to 0 hit points or when the spell ends. The summoned creatures are friendly to you and your companions. Roll initiative for the summoned creatures as a group, which have their own turns. They obey any verbal commands that you issue to them (no action required by you). If you don't issue any commands to them, they defend themselves from hostile creatures, but otherwise take no actions. The DM has the creatures’ statistics. At Higher Levels. When you cast this spell using certain higher-level spell slots, you choose one of the summoning options above, and more creatures appear: twice as many with a 6th-level slot and three times as many with an 8th-level slot.",
+                Classes = new string[] { },
+            };
+            Spells.Add(conjureWoodlandBeings.Name, conjureWoodlandBeings);
 
+            Spell contactOtherPlane = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Contact Other Plane",
+                SpellLv = SpellLv.fifth,
+                School = SchoolOfMagic.divination,
+                Ritual = true,
+                CastingTime = StringTime.minute,
+                Range = Range.self,
+                Verbal = true,
+                Duration = StringTime.minute,
+                Description = "You mentally contact a demigod, the spirit of a long-dead sage, or some other mysterious entity from another plane. Contacting this extraplanar intelligence can strain or even break your mind. When you cast this spell, make a DC 15 Intelligence saving throw. On a failure, you take 6d6 psychic damage and are insane until you finish a long rest. While insane, you can’t take actions, can’t understand what other creatures say, can’t read, and speak only in gibberish. A greater restoration spell cast on you ends this effect. On a successful save, you can ask the entity up to five questions. You must ask your questions before the spell ends. The DM answers each question with one word, such as “yes,” “no,” “maybe,” “never,” “irrelevant,” or “unclear” (if the entity doesn’t know the answer to the question). If a one-word answer would be misleading, the DM might instead offer a short phrase as an answer.",
+                Classes = new string[] { }
+            };
+            Spells.Add(contactOtherPlane.Name, contactOtherPlane);
 
+            Spell contagion = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Contagion",
+                SpellLv = SpellLv.fifth,
+                School = SchoolOfMagic.necromancy,
+                CastingTime = DndTime.action,
+                Range = Range.touch,
+                Verbal = true,
+                Somatic = true,
+                Duration = "7 " + StringTime.days,
+                Description = "Your touch inflicts disease. Make a melee spell attack against a creature within your reach. On a hit, you afflict the creature with a disease of your choice from any of the ones described below. At the end of each of the target’s turns, it must make a Constitution saving throw. After failing three of these saving throws, the disease’s effects last for the duration, and the creature stops making these saves. After succeeding on three of these saving throws, the creature recovers from the disease, and the spell ends. Since this spell induces a natural disease in its target, any effect that removes a disease or otherwise ameliorates a disease’s effects apply to it. - Blinding Sickness. Pain grips the creature’s mind, and its eyes turn milky white. The creature has disadvantage on Wisdom checks and Wisdom saving throws and is blinded. - - Filth Fever. A raging fever sw eeps through the creature’s body. The creature has disadvantage on Strength checks, Strength saving throws, and attack rolls that use Strength. - - Flesh Rot. The creature’s flesh decays. The creature has disadvantage on Charisma checks and vulnerability to all damage. - - Mindfire. The creature’s mind becom es feverish. The creature has disadvantage on Intelligence checks and Intelligence saving throws, and the creature behaves as if under the effects of the confusion spell during combat. - Seizure. The creature is overcom e with shaking. The creature has disadvantage on Dexterity checks, Dexterity saving throws, and attack rolls that use Dexterity. - - Slimy Doom . The creature begins to bleed uncontrollably. The creature has disadvantage on Constitution checks and Constitution saving throws. In addition, whenever the creature takes damage, it is stunned until the end of its next turn. -",
+                Classes = new string[] { },
+                SingleTarget = true,
+                SavingThrows = new string[] { SavingThrows.melee, SavingThrows.constitution },
+                Conditions = new string[] { Conditions.blinded, Conditions.stunned }
+            };
+            Spells.Add(contagion.Name, contagion);
 
+            Spell contingency = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Contingency",  
+                SpellLv = SpellLv.sixth,
+                School = SchoolOfMagic.evocation,
+                CastingTime = "10 " + StringTime.minutes,
+                Range = Range.self,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a statuette of yourself carved from ivory and decorated with gems worth at least 1,500gp",
+                SpellCost = 1500,
+                Duration = "10 " + StringTime.days,
+                Description = "Choose a spell of 5th level or lower that you can cast, that has a casting time of 1 action, and that can target you. You cast that spell—called the contingent spell—as part of casting contingency, expending spell slots for both, but the contingent spell doesn't come into effect. Instead, it takes effect when a certain circumstance occurs. You describe that circumstance when you cast the two spells. For example, a contingency cast with water breathing might stipulate that water breathing comes into effect when you are engulfed in water or a similar liquid. The contingent spell takes effect immediately after the circumstance is met for the first time, whether or not you want it to. and then contingency ends. The contingent spell takes effect only on you, even if it can normally target others. You can use only one contingency spell at a time. If you cast this spell again, the effect of another contingency spell on you ends. Also, contingency ends on you if its material component is ever not on your person.",
+                Classes = new string[] { },
+            };
+            Spells.Add(contingency.Name, contingency);
 
+            Spell continualFlame = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Continual Flame",
+                SpellLv = SpellLv.second,
+                School = SchoolOfMagic.evocation,
+                Ritual = true,
+                CastingTime = DndTime.action,
+                Range = Range.touch,
+                Verbal = true,
+                Somatic = true,
+                Materials = "ruby dust worth 50gp, which the spells comsumes",
+                SpellCost = 50,
+                Duration = DndTime.untilDispelled,
+                Description = "A flame, equivalent in brightness to a torch, springs forth from an object that you touch. The effect looks like a regular flame, but it creates no heat and doesn’t use oxygen. A continual flame can be covered or hidden but not smothered or quenched.",
+                Classes = new string[] { }
+            };
+            Spells.Add(continualFlame.Name, continualFlame);
 
+            Spell controlWater = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Control Water",
+                SpellLv = SpellLv.fourth,
+                School = SchoolOfMagic.transmutation,
+                CastingTime = DndTime.action,
+                Range = "300 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a drop of water and a pinch of dust",
+                Duration = DndTime.concentration + "10 " + StringTime.minutes,
+                Concentration = true,
+                Description = "Until the spell ends, you control any freestanding water inside an area you choose that is a cube up to 100 feet on a side. You can choose from any of the following effects when you cast this spell. As an action on your turn, you can repeat the same effect or choose a different one. - Flood. You cause the water level of all standing water in the area to rise by as much as 20 feet. If the area includes a shore, the flooding water spills over onto dry land. If you choose an area in a large body of water, you instead create a 20-foot tall wave that travels from one side of the area to the other and then crashes down. Any Huge or smaller vehicles in the wave’s path are carried with it to the other side. Any Huge or smaller vehicles struck by the wave have a 25 percent chance of capsizing. The water level remains elevated until the spell ends or you choose a different effect. If this effect produced a wave, the wave repeats on the start of your next turn while the flood effect lasts. - - Part Water. You cause water in the area to move apart and create a trench. The trench extends across the spell’s area, and the separated water forms a wall to either side. The trench remains until the spell ends or you choose a different effect. The water then slowly fills in the trench over the course of the next round until the normal water level is restored. - - Redirect Flow. You cause flowing water in the area to move in a direction you choose, even if the water has to flow over obstacles, up walls, or in other unlikely directions. The water in the area moves as you direct it, but once it moves beyond the spell’s area, it resumes its flow based on the terrain conditions. The water continues to move in the direction you chose until the spell ends or you choose a different effect. - - Whirlpool. This effect requires a body of water at least 50 feet square and 25 feet deep. You cause a whirlpool to form in the center of the area. The whirlpool forms a vortex that is 5 feet wide at the base, up to 50 feet wide at the top, and 25 feet tall. Any creature or object in the water and within 25 feet of the vortex is pulled 10 feet toward it. A creature can swim away from the vortex by making a Strength (Athletics) check against your spell save DC. When a creature enters the vortex for the first time on a turn or starts its turn there, it must make a Strength saving throw. On a failed save, the creature takes 2d8 bludgeoning damage and is caught in the vortex until the spell ends. On a successful save, the creature takes half damage, and isn’t caught in the vortex. A creature caught in the vortex can use its action to try to swim away from the vortex as described above, but has disadvantage on the Strength (Athletics) check to do so. The first time each turn that an object enters the vortex, the object takes 2d8 bludgeoning damage; this damage occurs each round it remains in the vortex.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.strength },
+                DamageTypes = new string[] { DamageType.bludgeoning }
+            };
+            Spells.Add(controlWater.Name, controlWater);
 
+            Spell controlWeather = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Control Weater",
+                SpellLv = SpellLv.eighth,
+                School = SchoolOfMagic.transmutation,
+                CastingTime = "10 " + StringTime.minutes,
+                Range = Range.self + ", 5" + Range.mileRadius,
+                Verbal = true,
+                Somatic = true,
+                Materials = "burning incense and bits of earth and wood mixed in water",
+                Duration = DndTime.concentration + "8 " + StringTime.hours,
+                Concentration = true,
+                Description = "You take control of the weather within 5 miles of you for the duration. You must be outdoors to cast this spell. Moving to a place where you don’t have a clear path to the sky ends the spell early. When you cast the spell, you change the current weather conditions, which are determined by the DM based on the climate and season. You can change precipitation, temperature, and wind. It takes 1d4 x 10 minutes for the new conditions to take effect. Once they do so, you can change the conditions again. W en the spell ends, the weather gradually returns to normal. When you change the weather conditions, find a current condition on the following tables and change its stage by one, up or down. When changing the wind, you can change its direction. ~Precipitation~ - 1 Clear - - 2 Light clouds - - 3 Overcast or ground fog - - 4 Rain, hail, or snow - - 5 Torrential rain, driving hail, or blizzard - ~Temperature~ - 1 Unbearable heat - - 2 Hot - - 3 Warm - - 4 Cool - - 5 Cold - - 6 Arctic cold - ~Wind~ - 1 Calm - - 2 Moderate wind - - 3 Strong wind - - 4 Gale - - 5 Storm -",
+                Classes = new string[] { }
+            };
+            Spells.Add(controlWeather.Name, controlWeather);
 
+            Spell cordonOfArrows = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Cordon of Arrows",
+                SpellLv = SpellLv.second,
+                School = SchoolOfMagic.transmutation,
+                CastingTime = DndTime.action,
+                Range = "5 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "four or more arrows or bolts",
+                Duration = "8 " + StringTime.hours,
+                Description = "You plant four pieces of nonmagical ammunition— arrows or crossbow bolts—in the ground within range and lay magic upon them to protect an area. Until the spell ends, whenever a creature other than you comes within 30 feet of the ammunition for the first time on a turn or ends its turn there, one piece of ammunition flies up to strike it. The creature must succeed on a Dexterity saving throw or take 1d6 piercing damage. The piece of ammunition is then destroyed. The spell ends when no ammunition remains. When you cast this spell, you can designate any creatures you choose, and the spell ignores them. At Higher Levels. When you cast this spell using a spell slot of 3rd level or higher, the amount of ammunition that can be affected increases by two for each slot level above 2nd.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.dexterity },
+                DamageTypes = new string[] { DamageType.piercing }
+            };
+            Spells.Add(cordonOfArrows.Name, cordonOfArrows);
 
+            Spell counterSpell = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Counter Spell",
+                SpellLv = SpellLv.third,
+                School = SchoolOfMagic.abjuration,
+                CastingTime = DndTime.reaction + ", which you take when you see a creature within 60 feet of you casting a spell",
+                Range = "60 " + Range.feet,
+                Somatic = true,
+                Duration = DndTime.instantaneous,
+                Description = "You attempt to interrupt a creature in the process of casting a spell. If the creature is casting a spell of 3rd level or lower, its spell fails and has no effect. If it is casting a spell of 4th level or higher, make an ability check using your spellcasting ability. The DC equals 10 + the spell’s level. On a success, the creature’s spell fails and has no effect. At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, the interrupted spell has no effect if its level is less than or equal to the level of the spell slot you used.",
+                Classes = new string[] { }     
+            };
+            Spells.Add(counterSpell.Name, counterSpell);
 
+            Spell createFoodAndWater = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Create Food and Water",
+                SpellLv = SpellLv.third,
+                School = SchoolOfMagic.conjuration,
+                CastingTime = DndTime.action,
+                Range = "30 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.instantaneous,
+                Description = "You create 45 pounds of food and 30 gallons of water on the ground or in containers within range, enough to sustain up to fifteen humanoids or five steeds for 24 hours. The food is bland but nourishing, and spoils if uneaten after 24 hours. The water is clean and doesn’t go bad.",
+                Classes = new string[] { }
+            };
+            Spells.Add(createFoodAndWater.Name, createFoodAndWater);
 
+            Spell createOrDestroyWater = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Create or Destroy Water",
+                SpellLv = SpellLv.first,
+                School = SchoolOfMagic.transmutation,
+                CastingTime = DndTime.action,
+                Range = "30 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a drop of water if creating water or a few grains of sand if destroying it",
+                Duration = DndTime.instantaneous,
+                Description = "You either create or destroy water ~ Create Water. You create up to 10 gallons of clean water within range in an open container. Alternatively, the water falls as rain in a 30-foot cube within range, extinguishing exposed flames in the area. ~ ~ Destroy Water. You destroy up to 10 gallons of water in an open container within range. Alternatively, you destroy fog in a 30-foot cube within range. ~ At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, you create or destroy 10 additional gallons of water, or the size of the cube increases by 5 feet, for each slot level above 1st.",
+                Classes = new string[] { }
+            };
+            Spells.Add(createOrDestroyWater.Name, createOrDestroyWater);
 
+            Spell createUndead = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Create Undead",
+                SpellLv = SpellLv.sixth,
+                School = SchoolOfMagic.necromancy,
+                CastingTime = StringTime.minute,
+                Range = "10 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "one clay pot filled with grave dirt. one clay pot filled with brackish water, and one 150gp black onyx stone for each corpse",
+                SpellCost = 150,
+                Duration = DndTime.instantaneous,
+                Concentration = true,
+                Description = "You can cast this spell only at night. Choose up to three corpses of Medium or Small humanoids within range. Each corpse becomes a ghoul under your control. (The DM has game statistics for these creatures.) As a bonus action on each of your turns, you can mentally command any creature you animated with this spell if the creature is within 120 feet of you (if you control multiple creatures, you can command any or all of them at the same time, issuing the same command to each one). You decide what action the creature will take and where it will move during its next turn, or you can issue a general command, such as to guard a particular chamber or corridor. If you issue no commands, the creature only defends itself against hostile creatures. Once given an order, the creature continues to follow it until its task is complete. The creature is under your control for 24 hours, after which it stops obeying any command you have given it. To maintain control of the creature for another 24 hours, you must cast this spell on the creature before the current 24-hour period ends. This use of the spell reasserts your control over up to three creatures you have animated with this spell, rather than animating new ones. At Higher Levels. W en you cast this spell using a 7th-level spell slot, you can animate or reassert control over four ghouls. When you cast this spell using an 8th-level spell slot, you can animate or reassert control over five ghouls or two ghasts or wights. When you cast this spell using a 9th-level spell slot, you can animate or reassert control over six ghouls, three ghasts or wights, or two mummies.",
+                Classes = new string[] { }
+            };
+            Spells.Add(createUndead.Name, createUndead);
 
+            Spell creation = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Creation",
+                SpellLv = SpellLv.fifth,
+                School = SchoolOfMagic.illusion,
+                CastingTime = StringTime.minute,
+                Range = "30 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a tiny pieve of matter of the same type of the item you plan to create",
+                Duration = DndTime.special,
+                Description = "You pull wisps of shadow material from the Shadowfell to create a nonliving object of vegetable matter within range: soft goods, rope, wood, or something similar. You can also use this spell to create mineral objects such as stone, crystal, or metal. The object created must be no larger than a 5-foot cube, and the object must be of a form and material that you have seen before. The duration depends on the object’s material. If the object is composed of multiple materials, use the shortest duration. - Vegetable matter 1 day - - Stone or crystal 12 hours - - Precious metals 1 hour - - Gems 10 minutes - - Adamantine or mithral 1 minute - Using any material created by this spell as another spell’s material component causes that spell to fail. At Higher Levels. When you cast this spell using a spell slot of 6th level or higher, the cube increases by 5 feet for each slot level above 5th.",
+                Classes = new string[] { }
+            };
+            Spells.Add(creation.Name, creation);
 
+            Spell crownOfMadness = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Crown of Madness",
+                SpellLv = SpellLv.second,
+                School = SchoolOfMagic.enchantment,
+                CastingTime = DndTime.action,
+                Range = "120 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "One humanoid of your choice that you can see within range must succeed on a Wisdom saving throw or become charmed by you for the duration. While the target is charmed in this way, a twisted crown of jagged iron appears on its head, and a madness glows in its eyes. The charmed target must use its action before moving on each of its turns to make a melee attack against a creature other than itself that you mentally choose. The target can act normally on its turn if you choose no creature or if none are within its reach. On your subsequent turns, you must use your action to maintain control over the target, or the spell ends. Also, the target can make a Wisdom saving throw at the end of each of its turns. On a success, the spell ends.",
+                Classes = new string[] { },
+                SingleTarget = true,
+                SavingThrows = new string[] { SavingThrows.wisdom },
+                Conditions = new string[] { Conditions.charmed }
+            };
+            Spells.Add(crownOfMadness.Name, crownOfMadness);
 
+            Spell crusadersMantle = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Crusader's Mantle",
+                SpellLv = SpellLv.third,
+                School = SchoolOfMagic.evocation,
+                CastingTime = DndTime.action,
+                Range = Range.self,
+                Verbal = true,
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "Holy power radiates from you in an aura with a 30-foot radius, awakening boldness in friendly creatures. Until the spell ends, the aura moves with you, centered on you. While in the aura, each nonhostile creature in the aura (including you) deals an extra 1d4 radiant damage when it hits with a weapon attack.",
+                Classes = new string[] { },
+                DamageTypes = new string[] { DamageType.radiant }
+            };
+            Spells.Add(crusadersMantle.Name, crusadersMantle);
 
+            Spell cureWounds = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Cure Wounds",
+                SpellLv = SpellLv.first,
+                School = SchoolOfMagic.evocation,
+                CastingTime = DndTime.action    ,
+                Range = Range.touch,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.instantaneous,
+                Description = "A creature you touch regains a number of hit points equal to 1d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs. At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d8 for each slot level above 1st.",
+                Classes = new string[] { }
+            };
+            Spells.Add(cureWounds.Name, cureWounds);
 
+            #endregion
+
+            #region D
+
+            Spell dancingLights = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Dancing Lights",
+                SpellLv = SpellLv.cantrip,
+                School = SchoolOfMagic.evocation,
+                CastingTime = DndTime.action,
+                Range = "120 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a bit of phosphorus or wychwood, or a glowworm",
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "You create up to four torch-sized lights within range, making them appear as torches, lanterns, or glowing orbs that hover in the air for the duration. You can also combine the four lights into one glowing vaguely humanoid form of Medium size. Whichever form you choose, each light sheds dim light in a 10-foot radius. As a bonus action on your turn, you can move the lights up to 60 feet to a new spot within range. A light must be within 20 feet of another light created by this spell, and a light winks out if it exceeds the spell’s range.",
+                Classes = new string[] { }
+            };
+            Spells.Add(dancingLights.Name, dancingLights);
+
+            Spell darkness = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Darkness",
+                SpellLv = SpellLv.second,
+                School = SchoolOfMagic.evocation,
+                CastingTime = DndTime.action,
+                Range = "60 " + Range.feet,
+                Verbal = true,
+                Materials = "bat fur and a drop of pitch or piece of coal",
+                Duration = DndTime.concentration + "10 " + StringTime.minutes,
+                Concentration = true,
+                Description = "Magical darkness spreads from a point you choose within range to fill a 15-foot-radius sphere for the duration. The darkness spreads around corners. A creature with darkvision can’t see through this darkness, and nonmagical light can’t illuminate it. If the point you choose is on an object you are holding or one that isn’t being worn or carried, the darkness emanates from the object and moves with it. Completely covering the source of the darkness with an opaque object, such as a bowl or a helm, blocks the darkness. If any of this spell’s area overlaps with an area of light created by a spell of 2nd level or lower, the spell that created the light is dispelled.",
+                Classes = new string[] { }
+            };
+            Spells.Add(darkness.Name, darkness);
+
+            Spell daylight = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Daylight",
+                SpellLv = SpellLv.third,
+                School = SchoolOfMagic.evocation,
+                CastingTime = DndTime.action,
+                Range = "60 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = StringTime.hour,
+                Concentration = true,
+                Description = "A 60-foot-radius sphere of light spreads out from a point you choose within range. The sphere is bright light and sheds dim light for an additional 60 feet. If you chose a point on an object you are holding or one that isn’t being worn or carried, the light shines from the object and moves with it. Completely covering the affected object with an opaque object, such as a bowl or a helm, blocks the light. If any of this spell’s area overlaps with an area of darkness created by a spell of 3rd level or lower, the spell that created the darkness is dispelled.",
+                Classes = new string[] { }
+            };
+            Spells.Add(daylight.Name, daylight);
+
+            Spell deathWard = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Death Ward",
+                SpellLv = SpellLv.fourth,
+                School = SchoolOfMagic.abjuration,
+                CastingTime = DndTime.action,
+                Range = Range.touch,
+                Verbal = true,
+                Somatic = true,
+                Duration = "8 " + StringTime.hours,
+                Description = "You touch a creature and grant it a measure of protection from death. The first time the target would drop to 0 hit points as a result of taking damage, the target instead drops to 1 hit point, and the spell ends. If the spell is still in effect when the target is subjected to an effect that would kill it instantaneously without dealing damage, that effect is instead negated against the target, and the spell ends.",
+                Classes = new string[] { }
+            };
+            Spells.Add(deathWard.Name, deathWard);
+
+            Spell delayedBlastFireball = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Delayed Blast Fireball",
+                SpellLv = SpellLv.seventh,
+                School = SchoolOfMagic.evocation,
+                CastingTime = DndTime.action,
+                Range = "150 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a tiny ball of bat guano and sulfur",
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "A beam of yellow light flashes from your pointing finger, then condenses to linger at a chosen point within range as a glowing bead for the duration. When the spell ends, either because your concentration is broken or because you decide to end it, the bead blossoms with a low roar into an explosion of flame that spreads around corners. Each creature in a 20-foot-radius sphere centered on that point must make a Dexterity saving throw. A creature takes fire damage equal to the total accumulated damage on a failed save, or half as much damage on a successful one. The spell’s base damage is 12d6. If at the end of your turn the bead has not yet detonated, the damage increases by 1d6. If the glowing bead is touched before the interval has expired, the creature touching it must make a Dexterity saving throw. On a failed save, the spell ends immediately, causing the bead to erupt in flame. On a successful save, the creature can throw the bead up to 40 feet. When it strikes a creature or a solid object, the spell ends, and the bead explodes. The fire dam ages objects in the area and ignites flammable objects that aren’t being worn or carried. At Higher Levels. When you cast this spell using a spell slot of 8th level or higher, the base damage increases by 1d6 for each slot level above 7th.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.dexterity },
+                DamageTypes = new string[] { DamageType.fire }
+            };
+            Spells.Add(delayedBlastFireball.Name, delayedBlastFireball);
 
 
 
