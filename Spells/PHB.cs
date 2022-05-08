@@ -3612,13 +3612,47 @@ namespace Spells
 
             #region J
 
+            Spell jump = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Jump",
+                SpellLv = SpellLv.first,
+                School = SchoolOfMagic.transmutation,
+                CastingTime = DndTime.action,
+                Range = Range.touch,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a grasshopper's hind leg",
+                Duration = StringTime.minute,
+                Description = "You touch a creature. The creature's jump distance is tripled until the spell ends.",
+                Classes = new string[] { },
+                SingleTarget = true
+            };
+            Spells.Add(jump.Name, jump);
 
+            #endregion
 
+            #region K
 
+            Spell knock = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Knock",
+                SpellLv = SpellLv.second,
+                School = SchoolOfMagic.transmutation,
+                CastingTime = DndTime.action,
+                Range = "60 " + Range.feet,
+                Verbal = true,
+                Duration = DndTime.instantaneous,
+                Description = "Choose an object that you can see within range. The object can be a door, a box, a chest, a set of manacles, a padlock, or another object that contains a mundane or magical means that prevents access. A target that is held shut by a mundane lock or that is stuck or barred becomes unlocked, unstuck, or unbarred. If the object has multiple locks, only one of them is unlocked. If you choose a target that is held shut with arcane lock, that spell is suppressed for 10 minutes, during which time the target can be opened and shut normally. When you cast the spell, a loud knock, audible from as far away as 300 feet, emanates from the target object.",
+                Classes = new string[] { },
+                SingleTarget = true
+            };
+            Spells.Add(knock.Name, knock);
 
+            #endregion
 
-
-
+            #region L
 
 
 
