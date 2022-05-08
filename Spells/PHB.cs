@@ -2276,6 +2276,837 @@ namespace Spells
             Spells.Add(eyebite.Name, eyebite);
 
             #endregion
+
+            #region F
+
+            Spell fabricate = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Fabricate",
+                SpellLv = SpellLv.fourth,
+                School = SchoolOfMagic.transmutation,
+                CastingTime = "10 " + StringTime.minutes,
+                Range = "120 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.instantaneous,
+                Description = "You convert raw materials into products of the same material. For example, you can fabricate a wooden bridge from a clump of trees, a rope from a patch of hemp, and clothes from flax or wool. Choose raw materials that you can see within range. You can fabricate a Large or smaller object (contained within a 10-foot cube, or eight connected 5-foot cubes), given a sufficient quantity of raw material. If you are working with metal, stone, or another mineral substance, however, the fabricated object can be no larger than Medium (contained within a single 5-foot cube). The quality of objects made by the spell is commensurate with the quality of the raw materials. Creatures or magic items can’t be created or transmuted by this spell. You also can’t use it to create items that ordinarily require a high degree of craftsmanship, such as jewelry, weapons, glass, or armor, unless you have proficiency with the type of artisan’s tools used to craft such objects.",
+                Classes = new string[] { }
+            };
+            Spells.Add(fabricate.Name, fabricate);
+
+            Spell faerieFire = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Faerie Fire",
+                SpellLv = SpellLv.first,
+                School = SchoolOfMagic.evocation,
+                CastingTime = DndTime.action,
+                Range = "60 " + Range.feet,
+                Verbal = true,
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "Each object in a 20-foot cube within range is outlined in blue, green, or violet light (your choice). Any creature in the area when the spell is cast is also outlined in light if it fails a Dexterity saving throw. For the duration, objects and affected creatures shed dim light in a 10-foot radius. Any attack roll against an affected creature or object has advantage if the attacker can see it, and the affected creature or object can’t benefit from being invisible.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.dexterity }
+            };
+            Spells.Add(faerieFire.Name, faerieFire);
+
+            Spell falseLife = new Spell
+            {
+                Source = sourceTitle,
+                Name = "False Life",
+                SpellLv = SpellLv.first,
+                School = SchoolOfMagic.necromancy,
+                CastingTime = DndTime.action,
+                Range = Range.self,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a small amount of alcohol or distilled spirits",
+                Duration = StringTime.hour,
+                Description = "Bolstering yourself with a necromantic facsimile of life, you gain 1d4 + 4 temporary hit points for the duration. At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, you gain 5 additional temporary hit points for each slot level above 1st.",
+                Classes = new string[] { }
+            };
+            Spells.Add(falseLife.Name, falseLife);
+
+            Spell fear = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Fear",
+                SpellLv = SpellLv.third,
+                School = SchoolOfMagic.illusion,
+                CastingTime = DndTime.action,
+                Range = Range.self + ", 30" + Range.footCone,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a white feather or the heart of a hen",
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "You project a phantasmal image of a creature’s worst fears. Each creature in a 30-foot cone must succeed on a Wisdom saving throw or drop whatever it is holding and become frightened for the duration. While frightened by this spell, a creature must take the Dash action and move away from you by the safest available route on each of its turns, unless there is nowhere to move. If the creature ends its turn in a location where it doesn’t have line of sight to you, the creature can make a Wisdom saving throw. On a successful save, the spell ends for that creature.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.wisdom },
+                Conditions = new string[] { Conditions.frightened }
+            };
+            Spells.Add(fear.Name, fear);
+
+            Spell featherFall = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Feather Fall",
+                SpellLv = SpellLv.first,
+                School = SchoolOfMagic.transmutation,
+                CastingTime = DndTime.reaction + ", which you take when you or a creature within 60 feet of you falls",
+                Range = "60 " + Range.feet,
+                Verbal = true,
+                Materials = "a small feather or piece of down",
+                Duration = StringTime.minute,
+                Description = "Choose up to five falling creatures within range. A falling creature's rate of descent slow s to 60 feet per round until the spell ends. If the creature lands before the spell ends, it takes no falling damage and can land on its feet, and the spell ends for that creature.",
+                Classes = new string[] { },
+            };
+            Spells.Add(featherFall.Name, featherFall);
+
+            Spell feeblemind = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Feeblemind",
+                SpellLv = SpellLv.eighth,
+                School = SchoolOfMagic.enchantment,
+                CastingTime = DndTime.action,
+                Range = "150 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a handful of clay, crystal, glass, or mineral spheres",
+                Duration = DndTime.instantaneous,
+                Description = "You blast the mind of a creature that you can see within range, attempting to shatter its intellect and personality. The target takes 4d6 psychic damage and must make an Intelligence saving throw. On a failed save, the creature’s Intelligence and Charisma scores become 1. The creature can’t cast spells, activate magic items, understand language, or communicate in any intelligible way. The creature can, however, identify its friends, follow them, and even protect them. At the end of every 30 days, the creature can repeat its saving throw against this spell. If it succeeds on its saving throw, the spell ends. The spell can also be ended by greater restoration, heal, or wish.",
+                Classes = new string[] { },
+                SingleTarget = true,
+                SavingThrows = new string[] { SavingThrows.intelligence },
+                DamageTypes = new string[] { DamageType.psychic }
+            };
+            Spells.Add(feeblemind.Name, feeblemind);
+
+            Spell feignDeath = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Feign Death",
+                SpellLv = SpellLv.third,
+                School = SchoolOfMagic.necromancy,
+                Ritual = true,
+                CastingTime = DndTime.action,
+                Range = Range.touch,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a pinch of graveyard dirt",
+                Duration = StringTime.hour,
+                Description = "You touch a willing creature and put it into a cataleptic state that is indistinguishable from death. For the spell’s duration, or until you use an action to touch the target and dismiss the spell, the target appears dead to all outward inspection and to spells used to determine the target’s status. The target is blinded and incapacitated, and its speed drops to 0. The target has resistance to all damage except psychic damage. If the target is diseased or poisoned when you cast the spell, or becomes diseased or poisoned while under the spell’s effect, the disease and poison have no effect until the spell ends.",
+                Classes = new string[] { },
+                SingleTarget = true,
+                Conditions = new string[] { Conditions.blinded, Conditions.incapacitated }
+            };
+            Spells.Add(feignDeath.Name, feignDeath);
+
+            Spell findFamiliar = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Find Familiar",
+                SpellLv = SpellLv.first,
+                School = SchoolOfMagic.conjuration,
+                Ritual = true,
+                CastingTime = StringTime.hour,
+                Range = "10 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "10gp worth of charcoal, incense, and herbs that must be consumed by fire in a brass brazier",
+                SpellCost = 10,
+                Duration = DndTime.instantaneous,
+                Description = "You gain the service of a familiar, a spirit that takes an animal form you choose: bat, cat, crab, frog (toad), hawk, lizard, octopus, owl, poisonous snake, fish (quipper), rat, raven, sea horse, spider, or weasel. Appearing in an unoccupied space within range, the familiar has the statistics o f the chosen form, though it is a celestial, fey, or fiend (your choice) instead of a beast. Your familiar acts independently of you, but it always obeys your commands. In combat, it rolls its own initiative and acts on its own turn. A familiar can’t attack, but it can take other actions as normal. When the familiar drops to 0 hit points, it disappears, leaving behind no physical form. It reappears after you cast this spell again While your familiar is within 100 feet of you, you can communicate with it telepathically. Additionally, as an action, you can see through your familiar’s eyes and hear what it hears until the start of your next turn, gaining the benefits of any special senses that the familiar has. During this time, you are deaf and blind with regard to your own senses. As an action, you can temporarily dismiss your familiar. It disappears into a pocket dimension where it awaits your summons. Alternatively, you can dismiss it forever. As an action while it is temporarily dismissed, you can cause it to reappear in any unoccupied space within 30 feet of you. You can’t have m ore than one familiar at a time. If you cast this spell while you already have a familiar, you instead cause it to adopt a new form. Choose one of the forms from the above list. Your familiar transforms into the chosen creature. Finally, when you cast a spell with a range of touch, your familiar can deliver the spell as if it had cast the spell. Your familiar must be within 100 feet of you, and it must use its reaction to deliver the spell when you cast it. If the spell requires an attack roll, you use your attack modifier for the roll.",
+                Classes = new string[] { }
+            };
+            Spells.Add(findFamiliar.Name, findFamiliar);
+
+            Spell findSteed = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Find Steed",
+                SpellLv = SpellLv.second,
+                School = SchoolOfMagic.conjuration,
+                CastingTime = "10 " + StringTime.minutes,
+                Range = "30 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.instantaneous,
+                Description = "You summon a spirit that assumes the form of an unusually intelligent, strong, and loyal steed, creating a long-lasting bond with it. Appearing in an unoccupied space within range, the steed takes on a form that you choose, such as a warhorse, a pony, a camel, an elk, or a mastiff. (Your DM might allow other animals to be summoned as steeds.) The steed has the statistics of the chosen form, though it is a celestial, fey, or fiend (your choice) instead of its normal type. Additionally, if your steed has an Intelligence of 5 or less, its Intelligence becomes 6, and it gains the ability to understand one language of your choice that you speak. Your steed serves you as a mount, both in combat and out, and you have an instinctive bond with it that allows you to fight as a seam less unit. While mounted on your steed, you can make any spell you cast that targets only you also target your steed. When the steed drops to 0 hit points, it disappears, leaving behind no physical form. You can also dismiss your steed at any time as an action, causing it to disappear. In either case, casting this spell again sum m ons the same steed, restored to its hit point maximum. While your steed is within 1 mile of you, you can communicate with it telepathically. You can’t have more than one steed bonded by this spell at a time. As an action, you can release the steed from its bond at any time, causing it to disappear.",
+                Classes = new string[] { },
+            };
+            Spells.Add(findSteed.Name, findSteed);
+
+            Spell findThePath = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Find the Path",
+                SpellLv = SpellLv.sixth,
+                School = SchoolOfMagic.divination,
+                CastingTime = StringTime.minute,
+                Range = Range.self,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a set of divinatory tools -- such as bones, ivory sticks, cards, teeth, or carvd runes-- worth 100gp and an object from the location you wish you find.",
+                SpellCost = 100,
+                Duration = DndTime.concentration + StringTime.day,
+                Concentration = true,
+                Description = "This spell allows you to find the shortest, most direct physical route to a specific fixed location that you are familiar with on the same plane of existence. If you name a destination on another plane of existence, a destination that moves (such as a mobile fortress), or a destination that isn’t specific (such as “a green dragon’s lair”), the spell fails. For the duration, as long as you are on the same plane of existence as the destination, you know how far it is and in what direction it lies. While you are traveling there, whenever you are presented with a choice of paths along the way, you automatically determine which path is the shortest and most direct route (but not necessarily the safest route) to the destination.",
+                Classes = new string[] { }
+            };
+            Spells.Add(findThePath.Name, findThePath);
+
+            Spell findTraps = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Find Traps",
+                SpellLv = SpellLv.second,
+                School = SchoolOfMagic.divination,
+                CastingTime = DndTime.action,
+                Range = "120 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.instantaneous,
+                Description = "You sense the presence of any trap within range that is within line of sight. A trap, for the purpose of this spell, includes anything that would inflict a sudden or unexpected effect you consider harmful or undesirable, which was specifically intended as such by its creator. Thus, the spell would sense an area affected by the alarm spell, a glyph of warding, or a mechanical pit trap, but it would not reveal a natural weakness in the floor, an unstable ceiling, or a hidden sinkhole. This spell merely reveals that a trap is present. You don’t learn the location of each trap, but you do learn the general nature of the danger posed by a trap you sense.",
+                Classes = new string[] { }
+            };
+            Spells.Add(findTraps.Name, findTraps);
+
+            Spell fingerOfDeath = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Finger of Death",
+                SpellLv = SpellLv.seventh,
+                School = SchoolOfMagic.necromancy,
+                CastingTime = DndTime.action,
+                Range = "60 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.instantaneous,
+                Description = "You send negative energy coursing through a creature that you can see within range, causing it searing pain. The target must make a Constitution saving throw. It takes 7d8 + 30 necrotic damage on a failed save, or half as much damage on a successful one. A humanoid killed by this spell rises at the start of your next turn as a zombie that is permanently under your command, following your verbal orders to the best of its ability",
+                Classes = new string[] { },
+                SingleTarget = true,
+                SavingThrows = new string[] { SavingThrows.constitution },
+                DamageTypes = new string[] { DamageType.necrotic }
+            };
+            Spells.Add(fingerOfDeath.Name, fingerOfDeath);
+
+            Spell fireball = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Fireball",
+                SpellLv = SpellLv.third,
+                School = SchoolOfMagic.evocation,
+                CastingTime = DndTime.action,
+                Range = "150 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a tiny ball or bat guano and sulfur",
+                Duration = DndTime.instantaneous,
+                Description = "A bright streak flashes from your pointing finger to a point you choose within range and then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot-radius sphere centered on that point must make a Dexterity saving throw. A target takes 8d6 fire damage on a failed save, or half as much damage on a successful one. The fire spreads around corners. It ignites flammable objects in the area that aren't being worn or carried. At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.dexterity },
+                DamageTypes = new string[] { DamageType.fire }
+
+            };
+            Spells.Add(fireball.Name, fireball);
+
+            Spell fireBolt = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Fire Bolt",
+                SpellLv = SpellLv.cantrip,
+                School = SchoolOfMagic.evocation,
+                CastingTime = DndTime.action,
+                Range = "120 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.instantaneous,
+                Description = "You hurl a mote of fire at a creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 fire damage. A flammable object hit by this spell ignites if it isn't being worn or carried. This spell’s damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10).",
+                Classes = new string[] { },
+                SingleTarget = true,
+                SavingThrows = new string[] { SavingThrows.ranged },
+                DamageTypes = new string[] { DamageType.fire }
+            };
+            Spells.Add(fireBolt.Name, fireBolt);
+
+            Spell fireShield = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Fire Shield",
+                SpellLv = SpellLv.fourth,
+                School = SchoolOfMagic.evocation,
+                CastingTime = DndTime.action,
+                Range = Range.self,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a bit of phosphorus or a firefly",
+                Duration = "10 " + StringTime.minutes,
+                Description = "Thin and wispy flames wreathe your body for the duration, shedding bright light in a 10-foot radius and dim light for an additional 10 feet. You can end the spell early by using an action to dismiss it. The flames provide you with a warm shield or a chill shield, as you choose. The warm shield grants you resistance to cold damage, and the chill shield grants you resistance to fire damage. In addition, whenever a creature within 5 feet of you hits you with a melee attack, the shield erupts with flame. The attacker takes 2d8 fire damage from a warm shield, or 2d8 cold damage from a cold shield.",
+                Classes = new string[] { },
+                DamageTypes = new string[] { DamageType.cold, DamageType.fire }
+            };
+            Spells.Add(fireShield.Name, fireShield);
+
+            Spell fireStorm = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Fire Storm",
+                SpellLv = SpellLv.seventh,
+                School = SchoolOfMagic.evocation,
+                CastingTime = DndTime.action,
+                Range = "150 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.instantaneous,
+                Description = "A storm made up of sheets of roaring flame appears in a location you choose within range. The area of the storm consists of up to ten 10-foot cubes, which you can arrange as you wish. Each cube must have at least one face adjacent to the face of another cube. Each creature in the area must make a Dexterity saving throw. It takes 7d10 fire damage on a failed save, or half as much damage on a successful one. The fire damages objects in the area and ignites flammable objects that aren't being worn or carried. If you choose, plant life in the area is unaffected by this spell.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.dexterity },
+                DamageTypes = new string[] { DamageType.fire }
+            };
+            Spells.Add(fireStorm.Name, fireStorm);
+
+            Spell flameBlade = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Flame Blade",
+                SpellLv = SpellLv.second,
+                School = SchoolOfMagic.evocation,
+                CastingTime = DndTime.bounusAction,
+                Range = Range.self,
+                Verbal = true,
+                Somatic = true,
+                Materials = "leaf of sumac",
+                Duration = DndTime.concentration + "10 " + StringTime.minutes,
+                Description = "You evoke a fiery blade in your free hand. The blade is similar in size and shape to a scimitar, and it lasts for the duration. If you let go of the blade, it disappears, but you can evoke the blade again as a bonus action. You can use your action to make a melee spell attack with the fiery blade. On a hit, the target takes 3d6 fire damage. The flaming blade sheds bright light in a 10-foot radius and dim light for an additional 10 feet. At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for every two slot levels above 2nd.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.melee },
+                DamageTypes = new string[] { DamageType.fire }
+            };
+            Spells.Add(flameBlade.Name, flameBlade);
+
+            Spell flameStrike = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Flame Strike",
+                SpellLv = SpellLv.fifth,
+                School = SchoolOfMagic.evocation,
+                CastingTime = DndTime.action,
+                Range = "60 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "pinch of sulfur",
+                Duration = DndTime.instantaneous,
+                Description = "A vertical column of divine fire roars down from the heavens in a location you specify. Each creature in a 10-foot-radius, 40-foot-high cylinder centered on a point within range must make a Dexterity saving throw. A creature takes 4d6 fire damage and 4d6 radiant damage on a failed save, or half as much damage on a successful one. At Higher Levels. When you cast this spell using a spell slot of 6th level or higher, the fire damage or the radiant damage (your choice) increases by 1d6 for each slot level above 5th.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.dexterity },
+                DamageTypes = new string[] { DamageType.fire, DamageType.radiant }
+            };
+            Spells.Add(flameStrike.Name, flameStrike);
+
+            Spell flamingSphere = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Flaming Sphere",
+                SpellLv = SpellLv.second,
+                School = SchoolOfMagic.conjuration,
+                CastingTime = DndTime.action,
+                Range = "60 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a bit of tallow, a pinch of brimstone, and a dusting of powdered iron",
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "A 5-foot-diameter sphere of fire appears in an unoccupied space of your choice within range and lasts for the duration. Any creature that ends its turn within 5 feet of the sphere must make a Dexterity saving throw. The creature takes 2d6 fire damage on a failed save, or half as much damage on a successful one. As a bonus action, you can move the sphere up to 30 feet. If you ram the sphere into a creature, that creature must make the saving throw against the sphere’s damage, and the sphere stops moving this turn. When you move the sphere, you can direct it over barriers up to 5 feet tall and jump it across pits up to 10 feet wide. The sphere ignites flammable objects not being worn or carried, and it sheds bright light in a 20-foot radius and dim light for an additional 20 feet. At Higher Levels. When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.dexterity },
+                DamageTypes = new string[] { DamageType.fire }
+            };
+            Spells.Add(flamingSphere.Name, flamingSphere);
+
+            Spell fleshToStone = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Flesh to Stone",
+                SpellLv = SpellLv.sixth,
+                School = SchoolOfMagic.transmutation,
+                CastingTime = DndTime.action,
+                Range = "60 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a pinch of lime, water, and earth",
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "You attempt to turn one creature that you can see within range into stone. If the target’s body is made of flesh, the creature must make a Constitution saving throw. On a failed save, it is restrained as its flesh begins to harden. On a successful save, the creature isn’t affected. A creature restrained by this spell must make another Constitution saving throw at the end of each of its turns. If it successfully saves against this spell three times, the spell ends. If it fails its saves three times, it is turned to stone and subjected to the petrified condition for the duration. The successes and failures don’t need to be consecutive; keep track of both until the target collects three of a kind. If the creature is physically broken while petrified, it suffers from similar deformities if it reverts to its original state. If you maintain your concentration on this spell for the entire possible duration, the creature is turned to stone until the effect is removed",
+                Classes = new string[] { },
+                SingleTarget = true,
+                SavingThrows = new string[] { SavingThrows.constitution,  },
+                Conditions = new string[] { Conditions.restrained, Conditions.petrified }
+            };
+            Spells.Add(fleshToStone.Name, fleshToStone);
+
+            Spell fly = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Fly",
+                SpellLv = SpellLv.third,
+                School = SchoolOfMagic.transmutation,
+                CastingTime = DndTime.action,
+                Range = Range.touch,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a wing feather from any bird",
+                Duration = DndTime.concentration + "10 " + StringTime.minutes,
+                Concentration = true,
+                Description = "You touch a willing creature. The target gains a flying speed of 60 feet for the duration. When the spell ends, the target falls if it is still aloft, unless it can stop the fall. At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, you can target one additional creature for each slot level above 3rd.",
+                Classes = new string[] { },
+            };
+            Spells.Add(fly.Name, fly);
+
+            Spell fogCloud = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Fog Cloud",
+                SpellLv = SpellLv.first,
+                School = SchoolOfMagic.conjuration,
+                CastingTime = DndTime.action,
+                Range = "120 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.concentration + StringTime.hour,
+                Description = "You create a 20-foot-radius sphere of fog centered on a point within range. The sphere spreads around corners, and its area is heavily obscured. It lasts for the duration or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it. At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the radius of the fog increases by 20 feet for each slot level above 1st.",
+                Classes = new string[] { },
+            };
+            Spells.Add(fogCloud.Name, fogCloud);
+
+            Spell forbiddance = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Forbiddance",
+                SpellLv = SpellLv.sixth,
+                School = SchoolOfMagic.abjuration,
+                Ritual = true,
+                CastingTime = "10 " + StringTime.minutes,
+                Range = Range.touch,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a sprinkling of holy water, rare incense, and powdered ruby worth at least 1,000gp",
+                SpellCost = 1000,
+                Duration = StringTime.day,
+                Description = "You create a ward against magical travel that protects up to 40,000 square feet of floor space to a height of 30 feet above the floor. For the duration, creatures can’t teleport into the area or use portals, such as those created by the gate spell, to enter the area. The spell proofs the area against planar travel, and therefore prevents creatures from accessing the area by way of the Astral Plane, Ethereal Plane, Feywild, Shadowfell, or the plane shift spell. In addition, the spell damages types of creatures that you choose when you cast it. Choose one or more of the following: celestials, elementals, fey, fiends, and undead. When a chosen creature enters the spell’s area for the first time on a turn or starts its turn there, the creature takes 5d10 radiant or necrotic damage (your choice when you cast this spell). When you cast this spell, you can designate a password. A creature that speaks the password as it enters the area takes no damage from the spell. The spell’s area can't overlap with the area of another forbiddance spell. If you cast forbiddance every day for 30 days in the same location, the spell lasts until it is dispelled, and the material components are consumed on the last casting.",
+                Classes = new string[] { },
+                SingleTarget = true,
+                DamageTypes = new string[] { DamageType.radiant, DamageType.necrotic }
+            };
+            Spells.Add(forbiddance.Name, forbiddance);
+
+            Spell forcecage = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Forcecage",
+                SpellLv = SpellLv.seventh,
+                School = SchoolOfMagic.evocation,
+                CastingTime = DndTime.action,
+                Range = "100 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "ruby dust worth 1,500gp",
+                SpellCost = 1500,
+                Duration = StringTime.hour,
+                Description = "An immobile, invisible, cube-shaped prison com posed of magical force springs into existence around an area you choose within range. The prison can be a cage or a solid box, as you choose. A prison in the shape of a cage can be up to 20 feet on a side and is made from 1/2-inch diameter bars spaced 1/2 inch apart. A prison in the shape of a box can be up to 10 feet on a side, creating a solid barrier that prevents any matter from passing through it and blocking any spells cast into or out from the area. When you cast the spell, any creature that is completely inside the cage's area is trapped. Creatures only partially within the area, or those too large to fit inside the area, are pushed away from the center of the area until they are completely outside the area. A creature inside the cage can’t leave it by nonmagical means. If the creature tries to use teleportation or interplanar travel to leave the cage, it must first make a Charisma saving throw. On a success, the creature can use that magic to exit the cage. On a failure, the creature can't exit the cage and wastes the use of the spell or effect. The cage also extends into the Ethereal Plane, blocking ethereal travel. This spell can’t be dispelled by dispel magic",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.charisma }
+            };
+            Spells.Add(forcecage.Name, forcecage);
+
+            Spell foresight = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Foresight",
+                SpellLv = SpellLv.nineth,
+                School = SchoolOfMagic.divination,
+                CastingTime = StringTime.minute,
+                Range = Range.touch,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a hummingbird feather",
+                Duration = "8 " + StringTime.hours,
+                Description = "You touch a willing creature and bestow a limited ability to see into the immediate future. For the duration, the target can’t be surprised and has advantage on attack rolls, ability checks, and saving throws. Additionally, other creatures have disadvantage on attack rolls against the target for the duration. This spell immediately ends if you cast it again before its duration ends",
+                Classes = new string[] { }
+            };
+            Spells.Add(foresight.Name, foresight);
+
+            Spell freedomOfMovement = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Freedom of Movement",
+                SpellLv = SpellLv.fourth,
+                School = SchoolOfMagic.abjuration,
+                CastingTime = DndTime.action,
+                Range = Range.touch,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a leather strap, bound around the arm or a similar appendage",
+                Duration = StringTime.hour,
+                Description = "You touch a willing creature. For the duration, the target’s movement is unaffected by difficult terrain, and spells and other magical effects can neither reduce the target’s speed nor cause the target to be paralyzed or restrained. The target can also spend 5 feet of movement to automatically escape from nonmagical restraints, such as manacles or a creature that has it grappled. Finally, being underwater imposes no penalties on the target's movement or attacks.",
+                Classes = new string[] { }
+            };
+            Spells.Add(freedomOfMovement.Name, freedomOfMovement);
+
+            Spell friends = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Friends",
+                SpellLv = SpellLv.cantrip,
+                School = SchoolOfMagic.enchantment,
+                CastingTime = DndTime.action,
+                Range = Range.self,
+                Somatic = true,
+                Materials = "a small amount of makeup applied to the face as this spell is cast",
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "For the duration, you have advantage on all Charisma checks directed at one creature of your choice that isn’t hostile toward you. When the spell ends, the creature realizes that you used magic to influence its mood and becomes hostile toward you. A creature prone to violence might attack you. Another creature might seek retribution in other ways (at the DM’s discretion), depending on the nature of your interaction with it.",
+                Classes = new string[] { }
+            };
+            Spells.Add(friends.Name, friends);
+
+            #endregion
+
+            #region G
+
+            Spell gaseousForm = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Gaseous Form",
+                SpellLv = SpellLv.third,
+                School = SchoolOfMagic.transmutation,
+                CastingTime = DndTime.action,
+                Range = Range.touch,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a bit of gauze and a wisp of smoke",
+                Duration = DndTime.concentration + StringTime.hour,
+                Concentration = true,
+                Description = "You transform a willing creature you touch, along with everything it’s wearing and carrying, into a misty cloud for the duration. The spell ends if the creature drops to 0 hit points. An incorporeal creature isn’t affected. While in this form, the target’s only method of movement is a flying speed of 10 feet. The target can enter and occupy the space of another creature. The target has resistance to nonmagical damage, and it has advantage on Strength, Dexterity, and Constitution saving throws. The target can pass through small holes, narrow openings, and even mere cracks, though it treats liquids as though they w ere solid surfaces. The target can't fall and remains hovering in the air even when stunned or otherwise incapacitated. While in the form of a misty cloud, the target can’t talk or manipulate objects, and any objects it w as carrying or holding can’t be dropped, used, or otherwise interacted with. The target can’t attack or cast spells.",
+                Classes = new string[] { }
+            };
+            Spells.Add(gaseousForm.Name, gaseousForm);
+
+            Spell gate = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Gate",
+                SpellLv = SpellLv.nineth,
+                School = SchoolOfMagic.conjuration,
+                CastingTime = DndTime.action,
+                Range = "60 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a diamond worth at least 5,000gp",
+                SpellCost = 5000,
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "You conjure a portal linking an unoccupied space you can see within range to a precise location on a different plane of existence. The portal is a circular opening, which you can make 5 to 20 feet in diameter. You can orient the portal in any direction you choose. The portal lasts for the duration. The portal has a front and a back on each plane where it appears. Travel through the portal is possible only by moving through its front. Anything that does so is instantly transported to the other plane, appearing in the unoccupied space nearest to the portal. Deities and other planar rulers can prevent portals created by this spell from opening in their presence or anywhere within their domains. When you cast this spell, you can speak the name of a specific creature (a pseudonym, title, or nickname doesn’t work). If that creature is on a plane other than the one you are on, the portal opens in the named creature’s immediate vicinity and draws the creature through it to the nearest unoccupied space on your side of the portal. You gain no special power over the creature, and it is free to act as the DM deems appropriate. It might leave, attack you, or help you.",
+                Classes = new string[] { }
+            };
+            Spells.Add(gate.Name, gate);
+
+            Spell geas = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Geas",
+                SpellLv = SpellLv.fifth,
+                School = SchoolOfMagic.enchantment,
+                CastingTime = StringTime.minute,
+                Range = "60 " + Range.feet,
+                Verbal = true,
+                Duration = "30 " + StringTime.days,
+                Concentration = true,
+                Description = "You place a magical command on a creature that you can see within range, forcing it to carry out some service or refrain from some action or course of activity as you decide. If the creature can understand you, it must succeed on a Wisdom saving throw or become charmed by you for the duration. While the creature is charmed by you, it takes 5 d10 psychic damage each time it acts in a manner directly counter to your instructions, but no more than once each day. A creature that can't understand you is unaffected by the spell. You can issue any command you choose, short of an activity that would result in certain death. Should you issue a suicidal command, the spell ends. You can end the spell early by using an action to dismiss it. A remove curse, greater restoration, or wish spell also ends it. At Higher Levels. When you cast this spell using a spell slot of 7th or 8th level, the duration is 1 year. When you cast this spell using a spell slot of 9th level, the spell lasts until it is ended by one of the spells mentioned above.",
+                Classes = new string[] { },
+                SingleTarget = true,
+                SavingThrows = new string[] { SavingThrows.wisdom },
+                DamageTypes = new string[] { DamageType.psychic },
+                Conditions = new string[] { Conditions.charmed }
+            };
+            Spells.Add(geas.Name, geas);
+
+            Spell gentleRepose = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Gentle Repose",
+                SpellLv = SpellLv.second,
+                School = SchoolOfMagic.necromancy,
+                Ritual = true,
+                CastingTime = DndTime.action,
+                Range = Range.touch,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a pinch of salt and one copper piece placed on each of the corpse’s eyes, which must remain there for the duration",
+                Duration = "10 " + StringTime.days,
+                Description = "You touch a corpse or other remains. For the duration, the target is protected from decay and can’t become undead. The spell also effectively extends the time limit on raising the target from the dead, since days spent under the influence of this spell don’t count against the time limit of spells such as raise dead.",
+                Classes = new string[] { }
+            };
+            Spells.Add(gentleRepose.Name, gentleRepose);
+
+            Spell giantInsect = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Giant Insect",
+                SpellLv = SpellLv.fourth,
+                School = SchoolOfMagic.transmutation,
+                CastingTime = DndTime.action,
+                Range = "30 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.concentration + "10 " + StringTime.minutes,
+                Concentration = true,
+                Description = "You transform up to ten centipedes, three spiders, five wasps, or one scorpion within range into giant versions of their natural forms for the duration. A centipede becomes a giant centipede, a spider becomes a giant spider, a wasp becomes a giant wasp, and a scorpion becomes a giant scorpion. Each creature obeys your verbal commands, and in combat, they act on your turn each round. The DM has the statistics for these creatures and resolves their actions and movement. A creature remains in its giant size for the duration, until it drops to 0 hit points, or until you use an action to dismiss the effect on it. The DM might allow you to choose different targets. For example, if you transform a bee, its giant version might have the same statistics as a giant wasp.",
+                Classes = new string[] { }
+            };
+            Spells.Add(giantInsect.Name, giantInsect);
+
+            Spell glibness = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Glibness",
+                SpellLv = SpellLv.eighth,
+                School = SchoolOfMagic.transmutation,
+                CastingTime = DndTime.action,
+                Range = Range.self,
+                Verbal = true,
+                Duration = StringTime.hour,
+                Concentration = true,
+                Description = "Until the spell ends, when you make a Charisma check, you can replace the number you roll with a 15. Additionally, no matter what you say, magic that would determine if you are telling the truth indicates that you are being truthful.",
+                Classes = new string[] { },
+            };
+            Spells.Add(glibness.Name, glibness);
+
+            Spell globalOfInvulnerability = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Global of Invulnerability",
+                SpellLv = SpellLv.sixth,
+                School = SchoolOfMagic.abjuration,
+                CastingTime = DndTime.action,
+                Range = Range.self + ", 10" + Range.footRadius,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a glass or crystal bead that shatters when the spell ends",
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "An immobile, faintly shimmering barrier springs into existence in a 10-foot radius around you and remains for the duration. Any spell of 5th level or lower cast from outside the barrier can't affect creatures or objects within it, even if the spell is cast using a higher level spell slot. Such a spell can target creatures and objects within the barrier, but the spell has no effect on them. Similarly, the area within the barrier is excluded from the areas affected by such spells. At Higher Levels. When you cast this spell using a spell slot of 7th level or higher, the barrier blocks spells of one level higher for each slot level above 6th.",
+                Classes = new string[] { }
+            };
+            Spells.Add(globalOfInvulnerability.Name, globalOfInvulnerability);
+
+            Spell glyphOfWarding = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Glyph of Warding",
+                SpellLv = SpellLv.third,
+                School = SchoolOfMagic.abjuration,
+                CastingTime = StringTime.hour,
+                Range = Range.touch,
+                Verbal = true,
+                Somatic = true,
+                Materials = "incense and powdered diamond worth at least 200gp which the spell consumes",
+                SpellCost = 200,
+                Duration = DndTime.untilDispelled,
+                Description = "When you cast this spell, you inscribe a glyph that harms other creatures, either upon a surface (such as a table or a section of floor or wall) or within an object that can be closed (such as a book, a scroll, or a treasure chest) to conceal the glyph. If you choose a surface, the glyph can cover an area of the surface no larger than 10 feet in diameter. If you choose an object, that object must remain in its place; if the object is moved more than 10 feet from where you cast this spell, the glyph is broken, and the spell ends without being triggered. The glyph is nearly invisible and requires a successful Intelligence (Investigation) check against your spell save DC to be found. You decide what triggers the glyph when you cast the spell. For glyphs inscribed on a surface, the most typical triggers include touching or standing on the glyph, removing another object covering the glyph, approaching within a certain distance of the glyph, or manipulating the object on which the glyph is inscribed. For glyphs inscribed within an object, the most common triggers include opening that object, approaching within a certain distance of the object, or seeing or reading the glyph. Once a glyph is triggered, this spell ends. You can further refine the trigger so the spell activates only under certain circumstances or according to physical characteristics (such as height or weight), creature kind (for example, the ward could be set to affect aberrations or drow), or alignment. You can also set conditions for creatures that don’t trigger the glyph, such as those who say a certain password. When you inscribe the glyph, choose explosive runes or a spell glyph. - Explosive Runes. When triggered, the glyph erupts with magical energy in a 20-foot-radius sphere centered on the glyph. The sphere spreads around corners. Each creature in the area must make a Dexterity saving throw. A creature takes 5d8 acid, cold, fire, lightning, or thunder damage on a failed saving throw (your choice when you create the glyph), or half as much damage on a successful one. - - Spell Glyph. You can store a prepared spell of 3rd level or lower in the glyph by casting it as part of creating the glyph. The spell must target a single creature or an area. The spell being stored has no immediate effect when cast in this way. When the glyph is triggered, the stored spell is cast. If the spell has a target, it targets the creature that triggered the glyph. If the spell affects an area, the area is centered on that creature. If the spell summons hostile creatures or creates harmful objects or traps, they appear as close as possible to the intruder and attack it. If the spell requires concentration, it lasts until the end of its full duration. - At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, the damage of an explosive runes glyph increases by 1d8 for each slot level above 3rd. If you create a spell glyph, you can store any spell of up to the same level as the slot you use for the glyph of warding.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.dexterity },
+                DamageTypes = new string[] { DamageType.acid, DamageType.cold, DamageType.fire, DamageType.lightning, DamageType.lightning }
+            };
+            Spells.Add(glyphOfWarding.Name, glyphOfWarding);
+
+            Spell goodberry = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Goodberry",
+                SpellLv = SpellLv.first,
+                School = SchoolOfMagic.transmutation,
+                CastingTime = DndTime.action,
+                Range = Range.touch,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a sprig of mistletoe",
+                Duration = DndTime.instantaneous,
+                Description = "Up to ten berries appear in your hand and are infused with magic for the duration. A creature can use its action to eat one berry. Eating a berry restores 1 hit point, and the berry provides enough nourishment to sustain a creature for one day. The berries lose their potency if they have not been consumed within 24 hours of the casting of this spell.",
+                Classes = new string[] { }
+            };
+            Spells.Add(goodberry.Name, goodberry);
+
+            Spell graspingVine = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Grasping Vine",
+                SpellLv = SpellLv.fourth,
+                School = SchoolOfMagic.conjuration,
+                CastingTime = DndTime.bounusAction,
+                Range = "30 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "You conjure a vine that sprouts from the ground in an unoccupied space of your choice that you can see within range. When you cast this spell, you can direct the vine to lash out at a creature within 30 feet of it that you can see. That creature must succeed on a Dexterity saving throw or be pulled 20 feet directly toward the vine. Until the spell ends, you can direct the vine to lash out at the same creature or another one as a bonus action on each of your turns.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.dexterity }
+            };
+            Spells.Add(graspingVine.Name, graspingVine);
+
+            Spell grease = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Grease",
+                SpellLv = SpellLv.first,
+                School = SchoolOfMagic.conjuration,
+                CastingTime = DndTime.action,
+                Range = "60 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a bit of pork rind or buter",
+                Duration = StringTime.minute,
+                Description = "Slick grease covers the ground in a 10-foot square centered on a point within range and turns it into difficult terrain for the duration. When the grease appears, each creature standing in its area must succeed on a Dexterity saving throw or fall prone. A creature that enters the area or ends its turn there must also succeed on a Dexterity saving throw or fall prone.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.dexterity },
+                Conditions = new string[] { Conditions.prone }
+            };
+            Spells.Add(grease.Name, grease);
+
+            Spell greaterInvisibility = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Greater Invisibility",
+                SpellLv = SpellLv.fourth,
+                School = SchoolOfMagic.illusion,
+                CastingTime = DndTime.action,
+                Range = Range.touch,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "You or a creature you touch becomes invisible until the spell ends. Anything the target is wearing or carrying is invisible as long as it is on the target’s person.",
+                Classes = new string[] { },
+                SingleTarget = true,
+                Conditions = new string[] { Conditions.invisible }
+            };
+            Spells.Add(greaterInvisibility.Name, greaterInvisibility);
+
+            Spell greaterRestoration = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Greater Restoration",
+                SpellLv = SpellLv.fifth,
+                School = SchoolOfMagic.abjuration,
+                CastingTime = DndTime.action,
+                Range = Range.touch,
+                Verbal = true,
+                Somatic = true,
+                Materials = "diamond dust worth at least 100gp, which the spell consumes",
+                SpellCost = 100,
+                Duration = DndTime.instantaneous,
+                Description = "You imbue a creature you touch with positive energy to undo a debilitating effect. You can reduce the target’s exhaustion level by one, or end one of the following effects on the target: - One effect that charmed or petrified the target - - One curse, including the target’s attunement to a cursed magic item - - Any reduction to one of the target’s ability scores - - One effect reducing the target’s hit point maximum -",
+                Classes = new string[] { },
+                SingleTarget = true
+            };
+            Spells.Add(greaterRestoration.Name, greaterRestoration);
+
+            Spell guardianOfFaith = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Gaurdian of Faith",
+                SpellLv = SpellLv.fourth,
+                School = SchoolOfMagic.conjuration,
+                CastingTime = DndTime.action,
+                Range = "30 " + Range.feet,
+                Verbal = true,
+                Duration = "8 " + StringTime.hours,
+                Concentration = true,
+                Description = "A Large spectral guardian appears and hovers for the duration in an unoccupied space of your choice that you can see within range. The guardian occupies that space and is indistinct except for a gleaming sword and shield emblazoned with the symbol of your deity. Any creature hostile to you that moves to a space within 10 feet of the guardian for the first time on a turn must succeed on a Dexterity saving throw. The creature takes 20 radiant damage on a failed save, or half as much damage on a successful one. The guardian vanishes when it has dealt a total of 60 damage.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.dexterity },
+                DamageTypes = new string[] { DamageType.radiant }
+            };
+            Spells.Add(guardianOfFaith.Name, guardianOfFaith);
+
+            Spell gaurdsAndWards = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Gaurds and Wards",
+                SpellLv = SpellLv.sixth,
+                School = SchoolOfMagic.abjuration,
+                CastingTime = "10 " + StringTime.minutes,
+                Range = Range.touch,
+                Verbal = true,
+                Somatic = true,
+                Materials = "burning incense, a small measure of brim stone and oil, a knotted string, a small amount of umber hulk blood, and a small silver rod worth at least 10 gp)",
+                SpellCost = 10,
+                Duration = "24 " + StringTime.hours,
+                Description = "You create a ward that protects up to 2,500 square feet of floor space (an area 50 feet square, or one hundred 5-foot squares or twenty-five 10-foot squares). The warded area can be up to 20 feet tall, and shaped as you desire. You can ward several stories of a stronghold by dividing the area among them, as long as you can walk into each contiguous area while you are casting the spell. When you cast this spell, you can specify individuals that are unaffected by any or all of the effects that you choose. You can also specify a password that, when spoken aloud, makes the speaker immune to these effects. Guards and wards creates the following effects within the warded area. - Corridors. Fog fills all the warded corridors, making them heavily obscured. In addition, at each intersection or branching passage offering a choice of direction, there is a 50 percent chance that a creature other than you will believe it is going in the opposite direction from the one it chooses. - - Doors. All doors in the warded area are magically locked, as if sealed by an arcane lock spell. In addition, you can cover up to ten doors with an illusion (equivalent to the illusory object function of the minor illusion spell) to make them appear as plain sections of wall. - - Stairs. Webs fill all stairs in the warded area from top to bottom, as the web spell. These strands regrow in 10 minutes if they are burned or torn away while guards and wards lasts. - - Other Spell Effect. You can place your choice of one of the following magical effects within the warded area of the stronghold. * Place dancing lights in four corridors. You can designate a simple program that the lights repeat as long as guards and wards lasts. * * Place magic mouth in two locations. * * Place stinking cloud in two locations. The vapors * appear in the places you designate; they return within 10 minutes if dispersed by w ind while guards and wards lasts. * Place a constant gust of wind in one corridor or room. * * Place a suggestion in one location. You select an area of up to 5 feet square, and any creature that enters or passes through the area receives the suggestion mentally * - The whole warded area radiates magic. A dispel magic cast on a specific effect, if successful, removes only that effect. You can create a permanently guarded and warded structure by casting this spell there every day for one year",
+                Classes = new string[] { }
+            };
+            Spells.Add(gaurdsAndWards.Name, gaurdsAndWards);
+
+            Spell guidance = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Guidance",
+                SpellLv = SpellLv.cantrip,
+                School = SchoolOfMagic.divination,
+                CastingTime = DndTime.action,
+                Range = Range.touch,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.concentration+ StringTime.minute,
+                Concentration = true,
+                Description = "You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The spell then ends.",
+                Classes = new string[] { }
+            };
+            Spells.Add(guidance.Name, guidance);
+
+            Spell guidingBolt = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Guiding Bolt",
+                SpellLv = SpellLv.first,
+                School = SchoolOfMagic.evocation,
+                CastingTime = DndTime.action,
+                Range = "120 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.round,
+                Description = "A flash of light streaks toward a creature of your choice within range. Make a ranged spell attack against the target. On a hit, the target takes 4d6 radiant damage, and the next attack roll made against this target before the end of your next turn has advantage, thanks to the mystical dim light glittering on the target until then. At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.",
+                Classes = new string[] { },
+                SingleTarget = true,
+                SavingThrows = new string[] { SavingThrows.ranged },
+                DamageTypes = new string[] { DamageType.radiant }
+            };
+            Spells.Add(guidingBolt.Name, guidingBolt);
+
+            Spell gustOfWind = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Gust of Wind",
+                SpellLv = SpellLv.second,
+                School = SchoolOfMagic.evocation,
+                CastingTime = DndTime.action,
+                Range = Range.self + ", 60" + Range.footLine,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a legume seed",
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "A line of strong wind 60 feet long and 10 feet wide blasts from you in a direction you choose for the spell’s duration. Each creature that starts its turn in the line must succeed on a Strength saving throw or be pushed 15 feet away from you in a direction following the line. Any creature in the line must spend 2 feet of movement for every 1 foot it moves when moving closer to you. The gust disperses gas or vapor, and it extinguishes candles, torches, and similar unprotected flames in the area. It causes protected flames, such as those of lanterns, to dance wildly and has a 50 percent chance to extinguish them. As a bonus action on each of your turns before the spell ends, you can change the direction in which the line blasts from you.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.strength }
+            };
+            Spells.Add(gustOfWind.Name, gustOfWind);
+
+            #endregion
         }
     }
 }
