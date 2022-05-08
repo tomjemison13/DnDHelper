@@ -3107,6 +3107,547 @@ namespace Spells
             Spells.Add(gustOfWind.Name, gustOfWind);
 
             #endregion
+
+            #region H
+
+            Spell hailOfThorns = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Hail of Thorns",
+                SpellLv = SpellLv.first,
+                School = SchoolOfMagic.conjuration,
+                CastingTime = DndTime.bounusAction,
+                Range = Range.self,
+                Verbal = true,
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "The next time you hit a creature with a ranged weapon attack before the spell ends, this spell creates a rain of thorns that sprouts from your ranged weapon or ammunition. In addition to the normal effect of the attack, the target of the attack and each creature within 5 feet of it must make a Dexterity saving throw. A creature takes 1dlO piercing damage on a failed save, or half as much damage on a successful one. At Higher Levels. If you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st (to a maximum of 6 d10).",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.dexterity },
+                DamageTypes = new string[] { DamageType.piercing }
+            };
+            Spells.Add(hailOfThorns.Name, hailOfThorns);
+
+            Spell hallow = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Hallow",
+                SpellLv = SpellLv.fifth,
+                School = SchoolOfMagic.evocation,
+                CastingTime = "24 " + StringTime.hours,
+                Range = Range.touch,
+                Verbal = true,
+                Somatic = true,
+                Materials = "herbs, oils, and incense worth at least 1,000gp, which the spell consumes",
+                SpellCost = 1000,
+                Duration = DndTime.untilDispelled,
+                Description = "You touch a point and infuse an area around it with holy (or unholy) power. The area can have a radius up to 60 feet, and the spell fails if the radius includes an area already under the effect a hallow spell. The affected area is subject to the following effects. First, celestials, elementals, fey, fiends, and undead can’t enter the area, nor can such creatures charm, frighten, or possess creatures within it. Any creature charmed, frightened, or possessed by such a creature is no longer charmed, frightened, or possessed upon entering the area. You can exclude one or more of those types of creatures from this effect. Second, you can bind an extra effect to the area. Choose the effect from the following list, or choose an effect offered by the DM. Some of these effects apply to creatures in the area; you can designate whether the effect applies to all creatures, creatures that follow a specific deity or leader, or creatures of a specific sort, such as orcs or trolls. When a creature that would be affected enters the spell’s area for the first time on a turn or starts its turn there, it can make a Charisma saving throw. On a success, the creature ignores the extra effect until it leaves the area. - Courage. Affected creatures can’t be frightened while in the area. - - Darkness. Darkness fills the area. Normal light, as well as magical light created by spells of a lower level than the slot you used to cast this spell, can’t illuminate the area. - - Daylight. Bright light fills the area. Magical darkness created by spells of a lower level than the slot you used to cast this spell can’t extinguish the light. - - Energy Protection. Affected creatures in the area have resistance to one damage type of your choice, except for bludgeoning, piercing, or slashing. - - Energy Vulnerability. Affected creatures in the area have vulnerability to one damage type of your choice, except for bludgeoning, piercing, or slashing. - - Everlasting Rest. Dead bodies interred in the area can’t be turned into undead. - - Extradimensional Interference. Affected creatures can’t move or travel using teleportation or by extradimensional or interplanar means. - - Fear. Affected creatures are frightened while in the area. - - Silence. No sound can emanate from within the area, and no sound can reach into it. - - Tongues. Affected creatures can communicate with any other creature in the area, even if they don’t share a common language. -",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.charisma },
+                Conditions = new string[] { Conditions.frightened }
+            };
+            Spells.Add(hallow.Name, hallow);
+
+            Spell hallucinatoryTerrain = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Hallucinatory Terrain",
+                SpellLv = SpellLv.fourth,
+                School = SchoolOfMagic.illusion,
+                CastingTime = "10 " + StringTime.minutes,
+                Range = "300 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a stone, a twig, and a bit of green plant",
+                Duration = "24 " + StringTime.hours,
+                Concentration = true,
+                Description = "You make natural terrain in a 150-foot cube in range look, sound, and smell like some other sort of natural terrain. Thus, open fields or a road can be made to resemble a swamp, hill, crevasse, or some other difficult or impassable terrain. A pond can be made to seem like a grassy meadow, a precipice like a gentle slope, or a rock-strewn gully like a wide and smooth road. Manufactured structures, equipment, and creatures within the area aren’t changed in appearance. The tactile characteristics of the terrain are unchanged, so creatures entering the area are likely to see through the illusion. If the difference isn’t obvious by touch, a creature carefully examining the illusion can attempt an Intelligence (Investigation) check against your spell save DC to disbelieve it. A creature who discerns the illusion for what it is, sees it as a vague image superimposed on the terrain.",
+                Classes = new string[] { }
+            };
+            Spells.Add(hallucinatoryTerrain.Name, hallucinatoryTerrain);
+
+            Spell harm = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Harm",
+                SpellLv = SpellLv.sixth,
+                School = SchoolOfMagic.necromancy,
+                CastingTime = DndTime.action,
+                Range = "60 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.instantaneous,
+                Description ="You unleash a virulent disease on a creature that you can see within range. The target must make a Constitution saving throw. On a failed save, it takes 14d6 necrotic damage, or half as much damage on a successful save. The damage can’t reduce the target’s hit points below 1. If the target fails the saving throw, its hit point maximum is reduced for 1 hour by an amount equal to the necrotic damage it took. Any effect that removes a disease allows a creature’s hit point maximum to return to normal before that time passes.",
+                Classes = new string[] { },
+                SingleTarget = true
+            };
+            Spells.Add(harm.Name, harm);
+
+            Spell haste = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Haste",
+                SpellLv = SpellLv.third,
+                School = SchoolOfMagic.transmutation,
+                CastingTime = DndTime.action,
+                Range = "30 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a shaving of licorice root",
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "Choose a willing creature that you can see within range. Until the spell ends, the target’s speed is doubled, it gains a +2 bonus to AC, it has advantage on Dexterity saving throws, and it gains an additional action on each of its turns. That action can be used only to take the Attack (one weapon attack only), Dash, Disengage, Hide, or Use an Object action. When the spell ends, the target can’t move or take actions until after its next turn, as a wave of lethargy sweeps over it.",
+                Classes = new string[] { },
+                SingleTarget = true
+            };
+            Spells.Add(haste.Name, haste);
+
+            Spell heal = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Heal",
+                SpellLv = SpellLv.sixth,
+                School = SchoolOfMagic.evocation,
+                CastingTime = DndTime.action,
+                Range = "60 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.instantaneous,
+                Description = "Choose a creature that you can see within range. A surge of positive energy washes through the creature, causing it to regain 70 hit points. This spell also ends blindness, deafness, and any diseases affecting the target. This spell has no effect on constructs or undead. At Higher Levels. When you cast this spell using a spell slot of 7th level or higher, the amount of healing increases by 10 for each slot level above 6th.",
+                Classes = new string[] { },
+                SingleTarget = true
+            };
+            Spells.Add(heal.Name, heal);
+
+            Spell healingWord = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Healing Word",
+                SpellLv = SpellLv.first,
+                School = SchoolOfMagic.evocation,
+                CastingTime = DndTime.bounusAction,
+                Range = "60 " + Range.feet,
+                Verbal = true,
+                Duration = DndTime.instantaneous,
+                Description = "A creature of your choice that you can see within range regains hit points equal to 1d4 + your spellcasting ability modifier. This spell has no effect on undead or constructs. At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d4 for each slot level above 1st.",
+                Classes = new string[] { }
+            };
+            Spells.Add(healingWord.Name, healingWord);
+
+            Spell heatMetal = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Heat Metal",
+                SpellLv = SpellLv.second,
+                School = SchoolOfMagic.transmutation,
+                CastingTime = DndTime.action,
+                Range = "60 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a piece of iron and a flame",
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "Choose a manufactured metal object, such as a metal weapon or a suit of heavy or medium metal armor, that you can see within range. You cause the object to glow red-hot. Any creature in physical contact with the object takes 2d8 fire damage when you cast the spell. Until the spell ends, you can use a bonus action on each of your subsequent turns to cause this damage again. If a creature is holding or wearing the object and takes the damage from it, the creature must succeed on a Constitution saving throw or drop the object if it can. If it doesn’t drop the object, it has disadvantage on attack rolls and ability checks until the start of your next turn. At Higher Levels. When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.constitution },
+                DamageTypes = new string[] { DamageType.fire }
+            };
+            Spells.Add(heatMetal.Name, heatMetal);
+
+            Spell hellishRebuke = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Hellish Rebuke",
+                SpellLv = SpellLv.first,
+                School = SchoolOfMagic.evocation,
+                CastingTime = DndTime.reaction + ", which you take in response to being damaged by a creature within 60 feet of you that you can see ",
+                Range = "60 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.instantaneous,
+                Description = "You point your finger, and the creature that damaged you is momentarily surrounded by hellish flames. The creature must make a Dexterity saving throw. It takes 2d10 fire damage on a failed save, or half as much damage on a successful one. At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1dlO for each slot level above 1st.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.dexterity },
+                DamageTypes = new string[] { DamageType.fire }
+            };
+            Spells.Add(hellishRebuke.Name, hellishRebuke);
+
+            Spell herosFeast = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Heros' Feast",
+                SpellLv = SpellLv.sixth,
+                School = SchoolOfMagic.conjuration,
+                CastingTime = "10 " + StringTime.minutes,
+                Range = "30 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a gem-encrusted bowl worth at least 1,000 gp, which the spell consumes",
+                SpellCost = 1000,
+                Duration = DndTime.instantaneous,
+                Description = "You bring forth a great feast, including magnificent food and drink. The feast takes 1 hour to consume and disappears at the end of that time, and the beneficial effects don’t set in until this hour is over. Up to twelve other creatures can partake of the feast. A creature that partakes of the feast gains several benefits. The creature is cured of all diseases and poison, becomes immune to poison and being frightened, and makes all Wisdom saving throws with advantage. Its hit point maximum also increases by 2d10, and it gains the same number of hit points. These benefits last for 24 hours.",
+                Classes = new string[] { }
+            };
+            Spells.Add(herosFeast.Name, herosFeast);
+
+            Spell heroism = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Heroism",
+                SpellLv = SpellLv.first,
+                School = SchoolOfMagic.enchantment,
+                CastingTime = DndTime.action,
+                Range = Range.touch,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.concentration + StringTime.minute,
+                Description = "A willing creature you touch is imbued with bravery. Until the spell ends, the creature is immune to being frightened and gains temporary hit points equal to your spellcasting ability modifier at the start of each of its turns. W hen the spell ends, the target loses any remaining temporary hit points from this spell. At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st.",
+                Classes = new string[] { },
+                SingleTarget = true
+            };
+            Spells.Add(heroism.Name, heroism);
+
+            Spell hex = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Hex",
+                SpellLv = SpellLv.first,
+                School = SchoolOfMagic.enchantment,
+                CastingTime = DndTime.bounusAction,
+                Range = "90 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a petrified eye of a newt",
+                Duration = DndTime.concentration + StringTime.hour,
+                Concentration = true,
+                Description = "You place a curse on a creature that you can see within range. Until the spell ends, you deal an extra 1d6 necrotic damage to the target whenever you hit it with an attack. Also, choose one ability when you cast the spell. The target has disadvantage on ability checks made with the chosen ability. If the target drops to 0 hit points before this spell ends, you can use a bonus action on a subsequent turn of yours to curse a new creature. A remove curse cast on the target ends this spell early. At Higher Levels. When you cast this spell using a spell slot of 3rd or 4th level, you can maintain your concentration on the spell for up to 8 hours. When you use a spell slot of 5th level or higher, you can maintain your concentration on the spell for up to 24 hours.",
+                Classes = new string[] { },
+                SingleTarget = true,
+                DamageTypes = new string[] { DamageType.necrotic }  
+            };
+            Spells.Add(hex.Name, hex);
+
+            Spell holdMonster = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Hold Monster",
+                SpellLv = SpellLv.fifth,
+                School = SchoolOfMagic.enchantment,
+                CastingTime = DndTime.action,
+                Range = "90 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a small, straight piece of iron",
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "Choose a creature that you can see within range. The target must succeed on a Wisdom saving throw or be paralyzed for the duration. This spell has no effect on undead. At the end of each of its turns, the target can make another Wisdom saving throw. On a success, the spell ends on the target. At Higher Levels. When you cast this spell using a spell slot of 6th level or higher, you can target one additional creature for each slot level above 5th. The creatures must be within 30 feet of each other when you target them.",
+                Classes = new string[] { },
+                SingleTarget = true,
+                SavingThrows = new string[] { SavingThrows.wisdom },
+                Conditions = new string[] { Conditions.paralyzed }
+            };
+            Spells.Add(holdMonster.Name, holdMonster);
+
+            Spell holdPerson = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Hold Person",
+                SpellLv = SpellLv.second,
+                School = SchoolOfMagic.enchantment,
+                CastingTime = DndTime.action,
+                Range = "60 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a small, straight piece of iron",
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "Choose a humanoid that you can see within range. The target must succeed on a Wisdom saving throw or be paralyzed for the duration. At the end of each of its turns, the target can make another Wisdom saving throw. On a success, the spell ends on the target. At Higher Levels. When you cast this spell using a spell slot of 3rd level or higher, you can target one additional humanoid for each slot level above 2nd. The humanoids must be within 30 feet of each other when you target them.",
+                Classes = new string[] { },
+                SingleTarget = true,
+                SavingThrows = new string[] { SavingThrows.wisdom },
+                Conditions = new string[] { Conditions.paralyzed }
+            };
+            Spells.Add(holdPerson.Name, holdPerson);
+
+            Spell holyAura = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Holy Aura",
+                SpellLv = SpellLv.eighth,
+                School = SchoolOfMagic.abjuration,
+                CastingTime = DndTime.action,
+                Range = Range.self,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a tiny reliquary worth at least 1,000gp containing a sacred relic, such as a scrap of cloth from a saint’s robe or a piece of parchment from a religious text",
+                SpellCost = 1000,
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "Divine light washes out from you and coalesces in a soft radiance in a 30-foot radius around you. Creatures of your choice in that radius when you cast this spell shed dim light in a 5-foot radius and have advantage on all saving throws, and other creatures have disadvantage on attack rolls against them until the spell ends. In addition, when a fiend or an undead hits an affected creature with a melee attack, the aura flashes with brilliant light. The attacker must succeed on a Constitution saving throw or be blinded until the spell ends.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.constitution },
+                Conditions = new string[] { Conditions.blinded }
+            };
+            Spells.Add(holyAura.Name, holyAura);
+
+            Spell hungerOfHadar = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Hunger of Hadar",
+                SpellLv = SpellLv.third,
+                School = SchoolOfMagic.conjuration,
+                CastingTime = DndTime.action,
+                Range = "150 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a pickled octopus tentacle",
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "You open a gateway to the dark between the stars, a region infested with unknown horrors. A 20-foot-radius sphere of blackness and bitter cold appears, centered on a point with range and lasting for the duration. This void is filled with a cacophony of soft whispers and slurping noises that can be heard up to 30 feet away. No light, magical or otherwise, can illuminate the area, and creatures fully within the area are blinded. The void creates a warp in the fabric of space, and the area is difficult terrain. Any creature that starts its turn in the area takes 2d6 cold damage. Any creature that ends its turn in the area must succeed on a Dexterity saving throw or take 2d6 acid damage as milky, otherworldly tentacles rub against it.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.dexterity },
+                DamageTypes = new string[] { DamageType.cold, DamageType.acid },
+                Conditions = new string[] { Conditions.blinded }
+            };
+            Spells.Add(hungerOfHadar.Name, hungerOfHadar);
+
+            Spell huntersMark = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Hunter's Mark",
+                SpellLv = SpellLv.first,
+                School = SchoolOfMagic.divination,
+                Ritual = true,
+                CastingTime = DndTime.bounusAction,
+                Range = "90 " + Range.feet,
+                Verbal = true,
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "You choose a creature you can see within range and mystically mark it as your quarry. Until the spell ends, you deal an extra 1d6 damage to the target whenever you hit it with a weapon attack, and you have advantage on any Wisdom (Perception) or Wisdom (Survival) check you make to find it. If the target drops to 0 hit points before this spell ends, you can use a bonus action on a subsequent turn of yours to mark a new creature. At Higher Levels. When you cast this spell using a spell slot of 3rd or 4th level, you can maintain your concentration on the spell for up to 8 hours. When you use a spell slot of 5th level or higher, you can maintain your concentration on the spell for up to 24 hours.",
+                Classes = new string[] { },
+                SingleTarget = true
+            };
+            Spells.Add(huntersMark.Name, huntersMark);
+
+            Spell hypnoticPattern = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Hypnotic Pattern",
+                SpellLv = SpellLv.third,
+                School = SchoolOfMagic.illusion,
+                CastingTime = DndTime.action,
+                Range = "120 " + Range.feet,
+                Somatic = true,
+                Materials = "a glowing stick of incense or a crystal vial filled with phosphorescent material",
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "You create a twisting pattern of colors that weaves through the air inside a 30-foot cube within range. The pattern appears for a moment and vanishes. Each creature in the area who sees the pattern must make a Wisdom saving throw. On a failed save, the creature becomes charmed for the duration. While charmed by this spell, the creature is incapacitated and has a speed of 0. The spell ends for an affected creature if it takes any damage or if someone else uses an action to shake the creature out of its stupor.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.wisdom },
+                Conditions = new string[] { Conditions.charmed, Conditions.incapacitated }
+            };
+            Spells.Add(hypnoticPattern.Name, hypnoticPattern);
+
+            #endregion
+
+            #region I
+
+            Spell iceStorm = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Ice Storm",
+                SpellLv = SpellLv.fourth,
+                School = SchoolOfMagic.evocation,
+                CastingTime = DndTime.action,
+                Range = "300 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a pinch of dust and a few drops of water",
+                Duration = DndTime.instantaneous,
+                Description = "A hail of rock-hard ice pounds to the ground in a 20-foot-radius, 40-foot-high cylinder centered on a point within range. Each creature in the cylinder must make a Dexterity saving throw. A creature takes 2d8 bludgeoning damage and 4d6 cold damage on a failed save, or half as much damage on a successful one. Hailstones turn the storm's area of effect into difficult terrain until the end of your next turn. At Higher Levels. When you cast this spell using a spell slot of 5th level or higher, the bludgeoning damage increases by 1d8 for each slot level above 4th.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.dexterity },
+                DamageTypes = new string[] { DamageType.bludgeoning, DamageType.cold }
+            };
+            Spells.Add(iceStorm.Name, iceStorm);
+
+            Spell identify = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Identify",
+                SpellLv = SpellLv.first,
+                School = SchoolOfMagic.divination,
+                Ritual = true,
+                CastingTime = StringTime.minute,
+                Range = Range.touch,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a pearl worth at least 100gp and an owl feather",
+                SpellCost = 100,
+                Duration = DndTime.instantaneous,
+                Description = "You choose one object that you must touch throughout the casting of the spell. If it is a magic item or some other magic-imbued object, you learn its properties and how to use them, whether it requires attunement to use, and how many charges it has, if any. You learn whether any spells are affecting the item and what they are. If the item was created by a spell, you learn which spell created it. If you instead touch a creature throughout the casting, you learn what spells, if any, are currently affecting it.",
+                Classes = new string[] { }
+            };
+            Spells.Add(identify.Name, identify);
+
+            Spell illusoryScript = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Illusory Script",
+                SpellLv = SpellLv.first,
+                School = SchoolOfMagic.illusion,
+                Ritual = true,
+                CastingTime = StringTime.minute,
+                Range = Range.touch,
+                Somatic = true,
+                Materials = "a lead-based ink worth at least 10gp, which the spell consumes",
+                SpellCost = 10,
+                Duration = "10 " + StringTime.days,
+                Description = "You write on parchment, paper, or some other suitable writing material and imbue it with a potent illusion that lasts for the duration. To you and any creatures you designate when you cast the spell, the writing appears normal, written in your hand, and conveys whatever meaning you intended when you wrote the text. To all others, the writing appears as if it were written in an unknown or magical script that is unintelligible. Alternatively, you can cause the writing to appear to be an entirely different message, written in a different hand and language, though the language must be one you know. Should the spell be dispelled, the original script and the illusion both disappear. A creature with truesight can read the hidden message.",
+                Classes = new string[] { }
+            };
+            Spells.Add(illusoryScript.Name, illusoryScript);
+
+            Spell imprisonment = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Imprisonment",
+                SpellLv = SpellLv.nineth,
+                School = SchoolOfMagic.abjuration,
+                CastingTime = StringTime.minute,
+                Range = "30 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a vellum depiction or a carved statuette in the likeness of the target, and a special component that varies according to the version of the spell you choose, worth at least 500gp per Hit Die of the target",
+                SpellCost = 500,
+                Duration = DndTime.untilDispelled,
+                Concentration = true,
+                Description = "You create a magical restraint to hold a creature that you can see within range. The target must succeed on a Wisdom saving throw or be bound by the spell; if it succeeds, it is immune to this spell if you cast it again. While affected by this spell, the creature doesn't need to breathe, eat, or drink, and it doesn’t age. Divination spells can’t locate or perceive the target. When you cast the spell, you choose one of the following forms of imprisonment - Burial. The target is entombed far beneath the earth in a sphere of magical force that is just large enough to contain the target. Nothing can pass through the sphere, nor can any creature teleport or use planar travel to get into or out of it. The special component for this version of the spell is a small mithral orb. - - Chaining. Heavy chains, firmly rooted in the ground, hold the target in place. The target is restrained until the spell ends, and it can’t move or be moved by any means until then. The special component for this version of the spell is a fine chain of precious metal. - - Hedged Prison. The spell transports the target into a tiny demiplane that is warded against teleportation and planar travel. The demiplane can be a labyrinth, a cage, a tower, or any similar confined structure or area of your choice. The special component for this version of the spell is a miniature representation of the prison made from jade. - - Minimus Containment. The target shrinks to a height of 1 inch and is imprisoned inside a gem stone or similar object. Light can pass through the gemstone normally (allowing the target to see out and other creatures to see in), but nothing else can pass through, even by means of teleportation or planar travel. The gemstone can’t be cut or broken while the spell remains in effect. The special component for this version of the spell is a large, transparent gemstone, such as a corundum , diamond, or ruby. - - Slumber. The target falls asleep and can’t be awoken. The special component for this version of the spell consists of rare soporific herbs. - - Ending the Spell. During the casting of the spell, in any of its versions, you can specify a condition that will cause the spell to end and release the target. The condition can be as specific or as elaborate as you choose, but the DM must agree that the condition is reasonable and has a likelihood of coming to pass. The conditions can be based on a creature’s name, identity, or deity but otherwise must be based on observable actions or qualities and not based on intangibles such as level, class, or hit points. - A dispel magic spell can end the spell only if it is cast as a 9th-level spell, targeting either the prison or the special component used to create it. You can use a particular special component to create only one prison at a time. If you cast the spell again using the same component, the target of the first casting is immediately freed from its binding",
+                Classes = new string[] { },
+                SingleTarget = true,
+                SavingThrows = new string[] { SavingThrows.wisdom },
+                Conditions = new string[] { Conditions.restrained }
+            };
+            Spells.Add(imprisonment.Name, imprisonment);
+
+            Spell incendiaryCloud = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Incendiary Cloud",
+                SpellLv = SpellLv.eighth,
+                School = SchoolOfMagic.conjuration,
+                CastingTime = DndTime.action,
+                Range = "150 " + Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.concentration + StringTime.minute,
+                Concentration = true,
+                Description = "A swirling cloud of smoke shot through with white-hot embers appears in a 20-foot-radius sphere centered on a point within range. The cloud spreads around corners and is heavily obscured. It lasts for the duration or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it. When the cloud appears, each creature in it must make a Dexterity saving throw. A creature takes 10d8 fire damage on a failed save, or half as much damage on a successful one. A creature must also make this saving throw when it enters the spell’s area for the first time on a turn or ends its turn there. The cloud moves 10 feet directly away from you in a direction that you choose at the start of each of your turns.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.dexterity },
+                DamageTypes = new string[] { DamageType.fire }
+            };
+            Spells.Add(incendiaryCloud.Name, incendiaryCloud);
+
+            Spell inflictWounds = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Inflict Wounds",
+                SpellLv = SpellLv.first,
+                School = SchoolOfMagic.necromancy,
+                CastingTime = DndTime.action,
+                Range = Range.touch,
+                Verbal = true,
+                Somatic = true,
+                Duration = DndTime.instantaneous,
+                Description = "Make a melee spell attack against a creature you can reach. On a hit, the target takes 3d10 necrotic damage. At Higher Levels. When you cast this spell using a spell slot 2nd level or higher, the damage increases by 1d10 for each slot level above 1st.",
+                Classes = new string[] { },
+                SingleTarget = true,
+                SavingThrows = new string[] { SavingThrows.melee },
+                DamageTypes = new string[] { DamageType.necrotic }
+            };
+            Spells.Add(inflictWounds.Name, inflictWounds);
+
+            Spell insectPlague = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Insect Plague",
+                SpellLv = SpellLv.fifth,
+                School = SchoolOfMagic.conjuration,
+                CastingTime = DndTime.action,
+                Range = "300 " +Range.feet,
+                Verbal = true,
+                Somatic = true,
+                Materials = "a few grains of sugar, some kernels of grain, and a smear of fat",
+                Duration = DndTime.concentration + "10 " + StringTime.minutes,
+                Concentration = true,
+                Description = "Swarming, biting locusts fill a 20-foot-radius sphere centered on a point you choose within range. The sphere spreads around corners. The sphere remains for the duration, and its area is lightly obscured. The sphere’s area is difficult terrain. When the area appears, each creature in it must make a Constitution saving throw. A creature takes 4d10 piercing damage on a failed save, or half as much damage on a successful one. A creature must also make this saving throw when it enters the spell’s area for the first time on a turn or ends its turn there. At Higher Levels. W hen you cast this spell using a spell slot of 6th level or higher, the damage increases by 1d10 for each slot level above 5th.",
+                Classes = new string[] { },
+                SavingThrows = new string[] { SavingThrows.constitution },
+                DamageTypes = new string[] { DamageType.piercing }
+            };
+            Spells.Add(insectPlague.Name, insectPlague);
+
+            Spell invisibility = new Spell
+            {
+                Source = sourceTitle,
+                Name = "Invisibility",
+                SpellLv = SpellLv.second,
+                School = SchoolOfMagic.illusion,
+                CastingTime = DndTime.action,
+                Range = Range.touch,
+                Verbal = true,
+                Somatic = true,
+                Materials = "an eyelash encased in gum arabic",
+                Duration = DndTime.concentration + StringTime.hour,
+                Concentration = true,
+                Description = "A creature you touch becomes invisible until the spell ends. Anything the target is wearing or carrying is invisible as long as it is on the target’s person. The spell ends for a target that attacks or casts a spell. At Higher Levels. When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd",
+                Classes = new string[] { },
+                SingleTarget = true,
+                Conditions = new string[] { Conditions.invisible }
+            };
+            Spells.Add(invisibility.Name, invisibility);
+
+            #endregion
+
+            #region J
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            #endregion
         }
     }
 }
