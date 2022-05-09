@@ -36,6 +36,10 @@ namespace Spells
         public const string sight = "Sight";
         public const string unlimited = "Unlimited";
         public const string special = "Special";
+        public const string feet30 = "30 feet";
+        public const string feet60 = "60 feet";
+        public const string feet90 = "90 feet";
+        public const string feet120 = "120 feet";
     }
 
     public static class DndTime
@@ -45,6 +49,9 @@ namespace Spells
         public const string bounusAction = "1 bonus action";
         public const string instantaneous = "Instantaneous";
         public const string concentration = "Concentration, up to ";
+        public const string concentration1Minute = "Concentration, up to 1 minute";
+        public const string concentration10Minute = "Concentration, up to 10 minutes";
+        public const string concentration1Hour = "Concentration, up to 1 hour";
         public const string special = "Special";
         public const string untilDispelled = "Until dispelled";
         public const string round = "1 round";
@@ -66,6 +73,8 @@ namespace Spells
         public const string months = "months";
         public const string year = "1 year";
         public const string years = "years";
+        public const string hours8 = "8 hours";
+        public const string hours24 = "24 hours";
     }
 
     public static class SchoolOfMagic
