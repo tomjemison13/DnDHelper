@@ -63,6 +63,7 @@ namespace Spells
         public const string senconds = "seconds";
         public const string minute = "1 minute";
         public const string minutes = "minutes";
+        public const string minutes10 = "10 minutes";
         public const string hour = "1 hour";
         public const string hours = "hours";
         public const string day = "1 day";
